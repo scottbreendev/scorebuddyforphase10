@@ -4,7 +4,7 @@ title: Privacy Policy
 
 # Privacy Policy
 
-**Effective date / Last updated: 2026-03-04**
+**Effective date / Last updated: 4th March 2026**
 
 This Privacy Policy describes how **Score Buddy (for Phase 10)** (“Score Buddy”, “we”, “our”, or “the app”) handles information when you use the iOS application.
 
@@ -106,6 +106,6 @@ We may update this Privacy Policy from time to time. We will change the “Last 
 ## 11) Contact Us
 If you have questions about this Privacy Policy, contact:
 
-**Name:** [Your Name / Company]  
-**Email:** [Your Support Email]  
+**Name:** Scott Breen
+**Email:** scott.breen.dev@outlook.com
 **App/Project:** Score Buddy (for Phase 10)
