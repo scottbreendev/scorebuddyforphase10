@@ -2,45 +2,99 @@
 title: Privacy Policy
 ---
 
-# Privacy Policy  
+# Privacy Policy
 
-**Last updated: 2026-02-25**  
+**Effective date / Last updated: 2026-03-04**
 
-At Score Buddy, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website and use our services.  
+This Privacy Policy describes how **Score Buddy (for Phase 10)** (“Score Buddy”, “we”, “our”, or “the app”) handles information when you use the iOS application.
 
-## Information We Collect  
-We may collect personal information from you in various ways, including when you visit our site, register on the site, and in connection with other activities, services, features, or resources we make available on our site.  
-- **Personal Identification Information:**  
-We may collect personal identification information from you, such as your name, email address, and phone number.  
-- **Non-Personal Identification Information:**  
-We may collect non-personal identification information such as the browser name, the type of computer, and technical information about your means of connection to our site (e.g., the operating system and the Internet Service Providers used).  
+## Summary (Plain English)
+- Score Buddy is designed to work without creating an account.
+- By default, your game/player data is stored on your device.
+- Contacts access is optional and only used if you choose to link a player to a contact.
+- We do **not** sell your personal information.
+- Some features described below are **not enabled in the current version** but may be added in future updates. See **“Future Features”**.
 
-## How We Use Your Information  
-Score Buddy may collect and use your personal information for the following purposes:  
-1. **To improve customer service:**  
-Your information helps us respond to your customer service requests and support needs more efficiently.  
-2. **To personalize user experience:**  
-We may use information in the aggregate to understand how our users as a group use the services and resources provided on our site.  
-3. **To improve our site:**  
-We may use feedback you provide to improve our products and services.  
-4. **To send periodic emails:**  
-We may use the email address to send you information and updates pertaining to your order. It may also be used to respond to your inquiries, questions, and/or other requests.  
+## 1) Information We Collect
 
-## How We Protect Your Information  
-We adopt appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our site.  
+### 1.1 Information you enter in the app
+We collect and store the information you choose to enter, such as:
+- Player names (for example, names you type in to represent players)
+- Game/score-related data you create in the app (as applicable to the version you are using)
 
-## Sharing Your Information  
-We do not sell, trade, or rent Users' personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers for the purposes outlined above.  
+### 1.2 Contacts information (optional)
+If you choose to use the optional Contacts feature and grant permission, the app may access limited information from your Contacts in order to link a player to a contact (for example, to display a profile picture or contact-based identity in the UI).
 
-## Third-Party Websites  
-Users may find advertising or other content on our site that links to the sites and services of our partners, suppliers, advertisers, sponsors, licensors, and other third parties. We do not control the content or links that appear on these sites and are not responsible for the practices employed by websites linked to or from our site.  
+Score Buddy does not require Contacts permission to function, and you can use the app without granting it.
 
-## Changes to This Privacy Policy  
-Score Buddy has the discretion to update this Privacy Policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect.  
+### 1.3 Support communications (optional)
+If you contact us for support (for example, by email), we will receive the information you choose to include in your message (such as your email address and the contents of the message).
 
-## Your Acceptance of These Terms  
-By using this site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our site. Your continued use of the site following the posting of changes to this policy will be deemed your acceptance of those changes.
+### 1.4 Automatically collected data
+**Current version:** Score Buddy does not include third‑party analytics or advertising SDKs in the current version. We do not intentionally collect app usage analytics for marketing or advertising purposes at this time.
 
----
+**Note:** Apple and iOS may provide diagnostic information (such as crash logs) to developers depending on your device settings and permissions. This is controlled by Apple and your device settings.
 
-[← Back to Home](index.md)
+## 2) How We Use Information
+We use information to:
+- Provide core app functionality (e.g., managing players and scores)
+- Display contact-linked UI elements if you enable the Contacts feature
+- Respond to support requests you initiate
+- Maintain app security and prevent misuse
+
+## 3) How We Store Information
+
+### 3.1 On-device storage
+By default, app data is stored locally on your device.
+
+### 3.2 Contacts linking (on-device)
+If you link a player to a contact, the app may store a reference that allows it to re-associate that player with the same contact in the future (for example, a Contacts identifier). This is stored on-device unless and until you enable cloud sync in a future version.
+
+## 4) Sharing and Disclosure
+We do not sell your personal information.
+
+We may disclose information only in limited cases, such as:
+- **With service providers** that help us operate the app (only if/when used and only as needed)
+- **For legal reasons** if required by law or valid legal process
+- **To protect rights and safety** of users, the public, or our services
+
+## 5) Data Retention
+We generally retain information for as long as needed to provide the app functionality:
+- Data you enter is retained on-device until you delete it or uninstall the app.
+- If you contact support, we retain communications as needed to respond and for record-keeping.
+
+## 6) Your Choices and Controls
+Depending on iOS settings and the app version:
+- **Contacts permission:** You can grant or revoke Contacts access in iOS Settings at any time.
+- **Delete app data:** You can delete data within the app (if supported) and/or uninstall the app to remove locally stored data.
+- **Support requests:** You can request deletion of support emails you have sent us (to the extent we can identify and remove them).
+
+## 7) Children’s Privacy
+Score Buddy is not intended for children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided personal information to us, contact us and we will take appropriate steps.
+
+## 8) Security
+We use reasonable safeguards designed to protect information stored by the app. However, no method of storage or transmission is 100% secure.
+
+## 9) Future Features (Not Enabled in the Current Version)
+We may add features in future versions that change how data is processed. If we do, we will update this Privacy Policy and you may be prompted in-app where required.
+
+Examples of future features we may add:
+
+### 9.1 iCloud / CloudKit Sync (future)
+A future version may offer optional iCloud/CloudKit synchronization so your data can sync across devices. If enabled, app data (such as players and game/score data) would be stored and synced using Apple’s iCloud/CloudKit services and associated with your iCloud account.
+
+### 9.2 Analytics (future)
+A future version may include analytics (for example, Google Analytics for Firebase) to help us understand app performance and usage (such as feature usage, session information, device/OS information, and diagnostics). If we add analytics, we will:
+- Update this policy to describe what is collected
+- Provide any required choices/controls (for example, opt-out where applicable)
+- Update App Store privacy disclosures accordingly
+
+## 10) Changes to This Privacy Policy
+We may update this Privacy Policy from time to time. We will change the “Last updated” date above when we do.
+
+## 11) Contact Us
+If you have questions about this Privacy Policy, contact:
+
+**Name:** [Your Name / Company]  
+**Email:** [Your Support Email]  
+**App/Project:** Score Buddy (for Phase 10)
