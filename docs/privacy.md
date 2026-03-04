@@ -30,7 +30,18 @@ Score Buddy does not require Contacts permission to function, and you can use th
 ### 1.3 Support communications (optional)
 If you contact us for support (for example, by email), we will receive the information you choose to include in your message (such as your email address and the contents of the message).
 
-### 1.4 Automatically collected data
+## 1.4 Location Information (Optional)
+
+Score Buddy can optionally use your device’s location to let you tag a game with a location and to generate **on-device, in-app analytics** (for example, summaries of games played at different places).
+
+- **When location is used:** Only when you choose to add/attach a location to a game (and/or while using the app, depending on your settings).
+- **What is collected:** [precise location / approximate location] from your device (as provided by iOS), which may be stored with the game record.
+- **Where it is stored (current version):** Location data is stored locally on your device and is not transmitted to us.
+- **Sharing:** Location-tagged game records may be shared by you if you use app sharing features (if available). We do not share it on your behalf.
+- **Future optional cloud sync:** If you enable iCloud/CloudKit sync in a future version, your location-tagged game records may be synced via Apple iCloud/CloudKit as part of your app data, associated with your iCloud account.
+- **Your control:** You can grant or revoke location permission at any time in iOS Settings. You can also delete location-tagged games to remove stored location data.
+
+### 1.5 Automatically collected data
 **Current version:** Score Buddy does not include third‑party analytics or advertising SDKs in the current version. We do not intentionally collect app usage analytics for marketing or advertising purposes at this time.
 
 **Note:** Apple and iOS may provide diagnostic information (such as crash logs) to developers depending on your device settings and permissions. This is controlled by Apple and your device settings.
