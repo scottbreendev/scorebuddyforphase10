@@ -55,6 +55,7 @@ We use `FirebaseAnalyticsWithoutAdId`, which means:
 | Features | Location tagged on a game, location insights viewed, which Insights sub-tab viewed |
 | Location permission | Location permission requested / result |
 | Players | Player added (manual entry or from Contacts), player customisation saved (avatar type, colour changed) |
+| Feedback | Whether the user responded positively or negatively to the in-app rating prompt (no name or identity attached) |
 
 None of these events include player names, scores, location names, or any content you enter into the app.
 
@@ -87,7 +88,6 @@ If you choose to tag a game with a location, Score Buddy requests "When In Use" 
 |---|---|---|---|
 | Firebase Analytics | Google LLC | Anonymous usage analytics | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | Firebase Crashlytics | Google LLC | Anonymous crash reports | [policies.google.com/privacy](https://policies.google.com/privacy) |
-| Firebase Performance | Google LLC | Anonymous app performance metrics | [policies.google.com/privacy](https://policies.google.com/privacy) |
 | App Store / StoreKit | Apple Inc. | In-app purchases | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
 | iCloud Backup | Apple Inc. | Device backup (user-controlled) | [apple.com/legal/privacy](https://www.apple.com/legal/privacy/) |
 
@@ -138,7 +138,7 @@ We may update this policy from time to time. When we do, we will update the "Las
 If you have questions about this privacy policy, please contact:
 
 **Score Buddy Support**
-Email: scott.breen.dev@oultook.com
+Email: scott.breen.dev@outlook.com
 
 ---
 
