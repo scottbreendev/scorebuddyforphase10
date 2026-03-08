@@ -1,7 +1,9 @@
 # Privacy Policy for Score Buddy
 
-**Effective Date:** March 6, 2026
-**Last Updated:** March 6, 2026
+**Effective Date:** March 6, 2026  
+**Last Updated:** March 8, 2026
+
+[← Back to Support](support.html)
 
 ---
 
@@ -137,8 +139,9 @@ We may update this policy from time to time. When we do, we will update the "Las
 
 If you have questions about this privacy policy, please contact:
 
-**Score Buddy Support**
-Email: scott.breen.dev@outlook.com
+**Score Buddy Support**  
+Email: [scott.breen.dev@outlook.com](mailto:scott.breen.dev@outlook.com)  
+Support page: [scorebuddyforphase10/support](support.html)
 
 ---
 
