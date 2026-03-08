@@ -1,7 +1,13 @@
+---
+title: Support — Score Buddy for Phase 10
+---
+
 # Score Buddy for Phase 10 — Support
 
 **Version:** 1.0.0  
 **Last Updated:** March 8, 2026
+
+[← Home](index.html) · [Privacy Policy](privacy-policy.html)
 
 Score Buddy is an unofficial scoring companion for Phase 10. This page covers how to get help, frequently asked questions, and a full breakdown of free vs Pro features.
 
@@ -27,42 +33,29 @@ Score Buddy is a hobby project maintained in spare time — responses may take a
 
 Score Buddy is free to download and play. **Score Buddy Pro** is a one-time lifetime purchase — no subscription, no hidden fees.
 
-### Free Features
+| Feature | 🆓 Free | 💎 Pro |
+|---------|:-------:|:------:|
+| Record rounds, phases, and scores | ✅ | ✅ |
+| Skip card tracking | ✅ | ✅ |
+| Round history (most recent first) | ✅ | ✅ |
+| Full scoresheet + CSV export | ✅ | ✅ |
+| Rematch banner (re-use last game's players) | ✅ | ✅ |
+| Edit last round | ✅ | ✅ |
+| Home screen leaderboard | ✅ | ✅ |
+| Phase 10 rules reference | ✅ | ✅ |
+| Works without any permissions | ✅ | ✅ |
+| **Saved games** | Up to 3 | Unlimited |
+| **Stats history** | Last 3 games | All games |
+| **Basic stats** — win rate, streak, avg position | ✅ | ✅ |
+| **Advanced Statistics** — deep performance insights | ❌ | ✅ |
+| **Trend Insights** — win rate trends, hot/cold streaks | ❌ | ✅ |
+| **Player Titles** — The Aggressor, Comeback Kid, Home Court Hero… | ❌ | ✅ |
+| **Location Insights** — win rates and skip patterns per venue | ❌ | ✅ |
+| **Skip Insights** — personalities, rivalries, mutual hostility | ❌ | ✅ |
+| **Player Customisation** — emoji avatar, photo, 12 accent colours | ❌ | ✅ |
+| **Live Activities** — Dynamic Island & Lock Screen *(iPhone only)* | ❌ | ✅ |
 
-Everything you need to track a game:
-
-| Feature | Free |
-|---------|------|
-| Track up to 5 saved games | ✅ |
-| Record rounds, phases, and scores | ✅ |
-| Skip card tracking | ✅ |
-| Round history (most recent first) | ✅ |
-| Full scoresheet + CSV export | ✅ |
-| Rematch banner (re-use last game's players) | ✅ |
-| Edit last round | ✅ |
-| Basic player stats (last 5 games) — win rate, streak, avg position | ✅ |
-| Home screen leaderboard | ✅ |
-| Phase 10 rules reference | ✅ |
-| Works without any permissions | ✅ |
-
-### Pro Features
-
-Everything in Free, plus:
-
-| Feature | Pro |
-|---------|-----|
-| **Unlimited saved games** | ✅ |
-| **Full game history** (no 5-game cap) | ✅ |
-| **Advanced Statistics** — deep player performance insights across all your games | ✅ |
-| **Trend Insights** — win rate trends, hot/cold streaks, most improved player | ✅ |
-| **Player Titles** — dynamic labels like "The Aggressor", "Comeback Kid", "Home Court Hero" | ✅ |
-| **Location Insights** — win rates, skip patterns, and streak difficulty per venue | ✅ |
-| **Skip Insights** — personalities, rivalries, mutual hostility score | ✅ |
-| **Player Customisation** — custom emoji avatar, photo from camera roll, 12 accent colours | ✅ |
-| **Live Activities** — live score on Dynamic Island and Lock Screen *(iPhone only)* | ✅ |
-| Stats computed over all games (not just last 5) | ✅ |
-
-**Price:** $2.99 one-time (price may vary by region)  
+**Price:** $4.99 AUD one-time (price may vary by region)  
 **How to purchase:** Tap the **Insights** tab → "Unlock Pro" banner, or go to **Settings → Score Buddy Pro**
 
 ### Restore a Purchase
@@ -118,8 +111,8 @@ Swipe left on the player's row in the active game and tap **Remove**. A confirma
 
 ### Statistics & Insights
 
-**Q: Why are my stats showing "Last 5 games"?**  
-Free users see statistics computed over their last 5 games. Upgrade to Pro to see stats across your full history with no cap.
+**Q: Why are my stats showing "Last 3 games"?**  
+Free users see statistics computed over their last 3 games. Upgrade to Pro to see stats across your full history with no cap.
 
 **Q: What does "Stats from completed games only" mean?**  
 This setting (on by default in **Settings**) means best/worst score stats only count games where someone actually completed Phase 10. This prevents abandoned or paused games from skewing your averages. You can turn it off in Settings if you prefer to include all games.
@@ -154,7 +147,7 @@ All your game data (players, scores, round history) is stored locally on your de
 No. Player names, scores, and game content never leave your device.
 
 **Q: What analytics does Score Buddy collect?**  
-Score Buddy uses Firebase Analytics (without advertising identifiers) to collect anonymous, aggregated usage data — things like "a game was started" or "the paywall was viewed". No player names, scores, or personal information are ever included. See the [Privacy Policy](privacy.html) for full details.
+Score Buddy uses Firebase Analytics (without advertising identifiers) to collect anonymous, aggregated usage data — things like "a game was started" or "the paywall was viewed". No player names, scores, or personal information are ever included. See the [Privacy Policy](privacy-policy.html) for full details.
 
 **Q: How do I delete all my data?**  
 Go to **Settings → Data & Storage → Delete All Data**. This permanently removes all players, games, and stats from your device. Alternatively, deleting the app removes all local data.
@@ -167,7 +160,7 @@ Go to **Settings → Data & Storage → Delete All Data**. This permanently remo
 No. Score Buddy Pro is a **one-time purchase** — pay once, use forever. There are no recurring charges.
 
 **Q: What's included in the free version?**  
-See the Free vs Pro table above. The free version is fully functional for tracking games — you're capped at 5 saved games and stats from your last 5 games.
+See the Free vs Pro table above. The free version is fully functional for tracking games — you're capped at 3 saved games and stats from your last 3 games.
 
 **Q: I bought Pro but it's not showing as active.**  
 Try restoring your purchase: **Settings → Score Buddy Pro → Restore Purchases**. If that doesn't work, check that you're signed in to the same Apple ID you purchased with. If the problem persists, [contact support](mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Pro%20Purchase%20Issue).
@@ -217,4 +210,4 @@ Score Buddy is developed and maintained by an independent developer. It is an un
 
 ---
 
-[Privacy Policy](privacy.html) · [Contact Support](mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Support)
+[← Home](index.html) · [Privacy Policy](privacy-policy.html) · [Contact Support](mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Support)
