@@ -1,6 +1,12 @@
 ---
-title: Score Buddy
+title: Score Buddy for Phase 10
+description: The scoring companion your Phase 10 game night deserves. Track scores, phases, and skip cards effortlessly — with deep insights for serious players.
+image: icon.svg
 ---
+
+<p align="center">
+  <img src="icon.svg" alt="Score Buddy icon" width="120" />
+</p>
 
 # Score Buddy for Phase 10
 

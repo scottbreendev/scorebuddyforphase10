@@ -1,5 +1,7 @@
 ---
 title: Support — Score Buddy for Phase 10
+description: Get help with Score Buddy for Phase 10. FAQs, free vs Pro features, and contact details.
+image: icon.svg
 ---
 
 # Score Buddy for Phase 10 — Support

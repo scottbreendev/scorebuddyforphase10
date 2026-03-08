@@ -1,5 +1,7 @@
 ---
 title: Privacy Policy — Score Buddy for Phase 10
+description: Privacy policy for Score Buddy for Phase 10. Your data stays on your device.
+image: icon.svg
 ---
 
 # Privacy Policy for Score Buddy
