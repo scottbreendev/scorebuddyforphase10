@@ -17,7 +17,7 @@ Score Buddy is an unofficial scoring companion for Phase 10. This page covers ho
 
 ## 📬 Contact & Feedback
 
-| | |
+| Feedback Type | Email link |
 |---|---|
 | **Support Email** | [scott.breen.dev@outlook.com](mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Support) |
 | **Feature Requests** | [scott.breen.dev@outlook.com](mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Feature%20Request) |
