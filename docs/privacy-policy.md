@@ -1,9 +1,13 @@
+---
+title: Privacy Policy — Score Buddy for Phase 10
+---
+
 # Privacy Policy for Score Buddy
 
 **Effective Date:** March 6, 2026  
 **Last Updated:** March 8, 2026
 
-[← Back to Support](support.html)
+[← Home](https://scottbreendev.github.io/scorebuddyforphase10/) · [Support](https://scottbreendev.github.io/scorebuddyforphase10/support.html)
 
 ---
 
@@ -141,7 +145,7 @@ If you have questions about this privacy policy, please contact:
 
 **Score Buddy Support**  
 Email: [scott.breen.dev@outlook.com](mailto:scott.breen.dev@outlook.com)  
-Support page: [scorebuddyforphase10/support](support.html)
+Support page: [scorebuddyforphase10/support](https://scottbreendev.github.io/scorebuddyforphase10/support.html)
 
 ---
 
