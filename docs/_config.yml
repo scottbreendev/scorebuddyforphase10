@@ -1,1 +1,66 @@
+# GitHub Pages configuration for Score Buddy for Phase 10
+# Publishing source: Documentation/websites/ (set in repo Settings → Pages)
+
+# ── Site identity ────────────────────────────────────────────────────────────
+title: Score Buddy for Phase 10
+tagline: Keep Score. Stay in the Game.
+description: >
+  Score Buddy is a Phase 10 scoring companion for iPhone and iPad.
+  Track scores, phases, and skip cards effortlessly — with deep insights for
+  serious players.
+
+url: "https://scottbreendev.github.io"
+baseurl: "/scorebuddyforphase10"
+
+# ── Theme ────────────────────────────────────────────────────────────────────
+# Recommended: Cayman
+# Clean, modern single-page app site theme. Dark header with a large title and
+# tagline — works perfectly with the card icon. Minimal, readable body text.
+# No config plugins required; works on GitHub Pages out of the box.
+#
+# Alternatives considered:
+#   - "minima"   → good default but feels like a blog, not an app site
+#   - "slate"    → nice dark sidebar, but sidebar nav is overkill for 3 pages
+#   - "midnight" → dark and dramatic, but low contrast for long FAQ text
+#   - "tactile"  → warm texture, but clashes with the blue card icon palette
+#   - "dinky"    → charming but too playful for a utility app
+#
+# Cayman gives you a dark navy header (matches the app's colour palette),
+# a prominent title + description, and a clean white content area — ideal for
+# marketing pages and FAQ content side by side.
 theme: jekyll-theme-cayman
+
+# ── Icon / favicon ───────────────────────────────────────────────────────────
+# icon.svg is the transparent-background version of the app icon.
+# Reference it in pages with: {{ site.icon }}
+# Or link it directly: /scorebuddyforphase10/icon.svg
+icon: icon.svg
+logo: icon.svg   # Cayman displays this in the header if present
+
+# ── Author ───────────────────────────────────────────────────────────────────
+author:
+  name: Scott Breen
+
+# ── Navigation links (shown in Cayman header) ────────────────────────────────
+# Cayman renders these as buttons in the top-right corner of the header.
+header_pages:
+  - support.md
+  - privacy-policy.md
+
+# ── Defaults ─────────────────────────────────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: icon.svg   # default Open Graph / social share image
+
+# ── Plugins (GitHub Pages safe list only) ────────────────────────────────────
+plugins:
+  - jekyll-seo-tag        # adds <title>, description, og: tags automatically
+  - jekyll-sitemap        # generates /sitemap.xml for search engines
+
+# ── SEO ──────────────────────────────────────────────────────────────────────
+# jekyll-seo-tag picks these up automatically.
+# Each page's front-matter `title:` overrides the site title in the <title> tag.
+twitter:
+  card: summary
