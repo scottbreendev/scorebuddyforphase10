@@ -46,27 +46,33 @@ Up to **3 saved games** included free.
 
 ---
 
-### Score Buddy Pro — know your group deeply
+### 💎 Score Buddy Pro — know your group deeply
 
-One-time purchase. No subscription. Unlock everything, keep it forever.
+> **$4.99 AUD** · One-time purchase · No subscription · Unlock everything, keep it forever.
 
-**Unlimited games & history**
-Never lose a result. Your full game history, always available.
+---
 
-**Advanced Statistics**
-Go beyond basic win rates. See trend lines, hot and cold streaks, monthly performance buckets, and a computed title for every player — *The Aggressor*, *Comeback Kid*, *Home Court Hero*, *The Wall*, *The Consistent One*.
+**📊 Advanced Statistics**
+Go beyond win rates. See trend lines, hot and cold streaks, monthly performance buckets, and a computed title for every player — *The Aggressor*, *Comeback Kid*, *Home Court Hero*, *The Wall*, *The Consistent One*.
 
-**Location Insights**
-Tag games to a location and Score Buddy builds a picture of where each player dominates, where they get skipped most, and how their game changes by venue.
+**🗂️ Unlimited Games & History**
+Never lose a result. Your full game history, always there — no cap, no deletions.
 
-**Skip Analytics**
-Find out who the table's enforcer really is. Skip personalities, rivalry rankings, mutual hostility scores, and revenge rates — all computed automatically from your game history.
+**📍 Location Insights**
+Tag games to a venue and Score Buddy builds a picture of where each player dominates, where they get skipped most, and how their game changes by location.
 
-**Player Customisation**
-Give every player a custom emoji avatar, upload a photo, and choose from 12 accent colours. Your players, your way.
+**🃏 Skip Analytics**
+Find out who the table's enforcer really is. Skip personalities, rivalry rankings, mutual hostility scores, and revenge rates — computed automatically from your history.
 
-**Live Activities** *(iPhone)*
-The live score sits on your Dynamic Island and Lock Screen while the game is in progress. Glance at your phone without unlocking it.
+**🎨 Player Customisation**
+Custom emoji avatar, photo upload, and 12 accent colours for every player. Your group, your way.
+
+**🏝️ Live Activities** *(iPhone)*
+The live score on your Dynamic Island and Lock Screen. Glance without unlocking.
+
+---
+
+[**Download Score Buddy free →**](#)
 
 ---
 
@@ -75,16 +81,6 @@ The live score sits on your Dynamic Island and Lock Screen while the game is in 
 Your game data **never leaves your device.** Player names, scores, and locations are stored locally using Apple's SwiftData framework. We use anonymous, aggregated analytics (no ad tracking, no advertising identifiers) to understand how the app is used — nothing more.
 
 [Read the full Privacy Policy →](privacy-policy.html)
-
----
-
-## Score Buddy Pro
-
-> **$4.99 AUD** · One-time purchase · No subscription
-
-Everything in the free tier, plus unlimited games, advanced stats, location and skip insights, player customisation, and Live Activities.
-
-Available on the [App Store](#).
 
 ---
 
