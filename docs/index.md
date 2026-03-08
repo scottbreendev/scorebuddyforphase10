@@ -33,12 +33,14 @@ Pen and paper gets messy. Spreadsheets are overkill. Score Buddy is built for ex
 
 ### Free — everything you need to play
 
-| | |
-|---|---|
-| ✅ Record rounds, phases, and scores | ✅ Skip card tracking |
-| ✅ Round history with pass/fail indicators | ✅ Full scoresheet + CSV export |
-| ✅ One-tap rematch | ✅ Edit last round (fix mistakes easily) |
-| ✅ Basic stats — win rate, streak, avg position | ✅ Works without any permissions |
+- ✅ Record rounds, phases, and scores
+- ✅ Skip card tracking
+- ✅ Round history with pass/fail indicators
+- ✅ Full scoresheet + CSV export
+- ✅ One-tap rematch
+- ✅ Edit last round (fix mistakes easily)
+- ✅ Basic stats — win rate, streak, avg position
+- ✅ Works without any permissions
 
 Up to **3 saved games** included free.
 
