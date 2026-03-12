@@ -248,6 +248,30 @@ body {
   box-shadow: 0 8px 30px rgb(0 0 0 / 0.35);
 }
 
+/* Coming Soon state — replaces download buttons until app is live.
+   TO GO LIVE: delete the <span class="btn-coming-soon"> block and
+   uncomment the App Store <a> block directly above it. */
+.btn-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  cursor: default;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+.btn-coming-soon-light {
+  background-color: var(--color-surface-raised);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
 .btn-hero-secondary {
   display: inline-flex;
   align-items: center;
