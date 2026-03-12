@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Score Buddy for Phase 10</title>
+  <meta name="description" content="Get help with Score Buddy for Phase 10. FAQs, free vs Pro features, contact details, and troubleshooting." />
+
+  <link rel="canonical" href="https://scottbreendev.github.io/scorebuddyforphase10/support.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://scottbreendev.github.io/scorebuddyforphase10/support.html" />
+  <meta property="og:title"       content="Support — Score Buddy for Phase 10" />
+  <meta property="og:description" content="Get help with Score Buddy for Phase 10. FAQs, free vs Pro features, contact details." />
+  <meta property="og:image"       content="images/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { brand: 'var(--color-brand)', accent: 'var(--color-accent)', gold: 'var(--color-gold)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="site-nav" class="nav-transparent" x-data="stickyNav()" aria-label="Main navigation">
+  <div class="section-container">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 no-underline" aria-label="Score Buddy — home">
+        <img src="images/icon.svg" alt="" width="32" height="32" class="rounded-lg flex-shrink-0" />
+        <span class="nav-wordmark font-bold text-base">Score Buddy</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#pro" class="nav-link">Pro</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="support.html" class="nav-link" aria-current="page">Support</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle" @click="$store.theme.toggle()" :aria-label="$store.theme.dark ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg x-show="$store.theme.dark"  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg x-show="!$store.theme.dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="hidden md:inline-flex btn-hero-primary text-sm py-2 px-4">Download Free</a>
+        <!-- TODO: Replace # with actual App Store URL -->
+        <button class="md:hidden flex flex-col gap-1.5 p-2 theme-toggle" @click="toggleMobile()" :aria-expanded="mobileOpen" aria-controls="mobile-menu" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" x-show="mobileOpen" x-transition class="md:hidden border-t border-white/10 py-4 flex flex-col gap-1" @click.outside="closeMobile()">
+      <a href="index.html#features" class="nav-link block" @click="closeMobile()">Features</a>
+      <a href="index.html#pro"      class="nav-link block" @click="closeMobile()">Pro</a>
+      <a href="index.html#faq"      class="nav-link block" @click="closeMobile()">FAQ</a>
+      <a href="support.html"        class="nav-link block" @click="closeMobile()">Support</a>
+      <div class="pt-3 border-t border-white/10">
+        <a href="#" class="btn-hero-primary w-full justify-center text-sm">Download Free on the App Store</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<div class="page-hero" aria-hidden="false">
+  <div class="section-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">Support</span>
+    </nav>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-2">Support</h1>
+    <p class="mt-3 text-white/70 text-lg max-w-xl">
+      FAQs, feature guides, and contact details for Score Buddy for Phase&nbsp;10.
+    </p>
+    <p class="mt-4 text-white/50 text-sm">Last updated March 11, 2026</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main-content" class="section-pad">
+  <div class="section-container max-w-4xl">
+
+    <!-- Contact -->
+    <section class="mb-16" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="text-2xl font-bold mb-6" style="color:var(--color-text-primary);">📬 Contact &amp; Feedback</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Support" class="surface p-5 text-center hover:shadow-md transition-shadow no-underline group">
+          <div class="text-2xl mb-2">🛠️</div>
+          <div class="font-semibold text-sm mb-1" style="color:var(--color-text-primary);">Support</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Bug reports &amp; help</div>
+        </a>
+        <a href="mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Feature%20Request" class="surface p-5 text-center hover:shadow-md transition-shadow no-underline group">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="font-semibold text-sm mb-1" style="color:var(--color-text-primary);">Feature Requests</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Ideas &amp; suggestions</div>
+        </a>
+        <a href="mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Bug%20Report" class="surface p-5 text-center hover:shadow-md transition-shadow no-underline group">
+          <div class="text-2xl mb-2">🐛</div>
+          <div class="font-semibold text-sm mb-1" style="color:var(--color-text-primary);">Bug Reports</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Something not working?</div>
+        </a>
+      </div>
+      <p class="mt-5 text-sm surface p-4 rounded-xl" style="color:var(--color-text-secondary);">
+        You can also reach support directly from within the app: <strong style="color:var(--color-text-primary);">Settings → Contact Support</strong> — this opens a pre-filled email with your app version, iOS version, and device model already included.
+        Score Buddy is a hobby project maintained in spare time — responses may take a few days and are not guaranteed.
+      </p>
+    </section>
+
+
+    <!-- Free vs Pro -->
+    <section class="mb-16" aria-labelledby="free-pro-heading">
+      <h2 id="free-pro-heading" class="text-2xl font-bold mb-2" style="color:var(--color-text-primary);">🆓 Free vs 💎 Pro Features</h2>
+      <p class="mb-6 text-sm" style="color:var(--color-text-secondary);">
+        Score Buddy is free to download and play. <strong style="color:var(--color-text-primary);">Score Buddy Pro</strong> is a one-time lifetime purchase — no subscription, no hidden fees.
+      </p>
+
+      <div class="surface overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th class="text-left px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);">Feature</th>
+              <th class="text-center px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);">🆓 Free</th>
+              <th class="text-center px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-accent);border-bottom:1px solid var(--color-border);">💎 Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Record rounds, phases &amp; scores</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Skip card tracking</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Round history (most recent first)</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Full scoresheet + CSV export</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Rematch banner (re-use last game's players)</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Edit last round</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Home screen leaderboard</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Player search</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Basic stats (win rate, streak, avg position)</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);"><td class="px-5 py-3" style="color:var(--color-text-secondary);">Phase 10 rules reference</td><td class="px-5 py-3 text-center icon-check">✓</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Saved games</td><td class="px-5 py-3 text-center text-sm" style="color:var(--color-text-secondary);">Up to 3</td><td class="px-5 py-3 text-center font-semibold" style="color:var(--color-accent);">Unlimited</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Stats history</td><td class="px-5 py-3 text-center text-sm" style="color:var(--color-text-secondary);">Last 3 games</td><td class="px-5 py-3 text-center font-semibold" style="color:var(--color-accent);">All games</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Advanced Statistics</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Trend Insights — win rate trends, hot/cold streaks</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Player Titles — The Aggressor, Comeback Kid…</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Location Insights</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Skip Insights — personalities, rivalries, hostility</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="border-bottom:1px solid var(--color-border);background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Player Customisation — emoji, photo, 12 accent colours</td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+            <tr style="background:var(--color-surface-raised);"><td class="px-5 py-3 font-medium" style="color:var(--color-text-primary);">Live Activities — Dynamic Island &amp; Lock Screen <span class="text-xs font-normal" style="color:var(--color-text-muted);">(iPhone only)</span></td><td class="px-5 py-3 text-center icon-cross">✕</td><td class="px-5 py-3 text-center icon-check">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-5 surface p-5 rounded-xl">
+        <p class="font-semibold text-sm mb-2" style="color:var(--color-text-primary);">Restore a Purchase</p>
+        <p class="text-sm" style="color:var(--color-text-secondary);">
+          If you've already purchased Pro and it's not showing on a new device or after reinstalling:
+          go to <strong style="color:var(--color-text-primary);">Settings</strong> in the app → tap <strong style="color:var(--color-text-primary);">Score Buddy Pro</strong> → tap <strong style="color:var(--color-text-primary);">Restore Purchases</strong>.
+          Your Pro status will be restored automatically through Apple's StoreKit.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FAQ — grouped by category -->
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-bold mb-8" style="color:var(--color-text-primary);">❓ Frequently Asked Questions</h2>
+
+      <!-- Getting Started -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Getting Started</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="gs-0">How do I add players?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="gs-0" role="region"><p class="faq-content">Go to the <strong>Players</strong> tab and tap the <strong>+</strong> button. You can create a new player by typing a name, or import from Contacts to get their profile picture. No permissions are required to add players manually.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="gs-1">How do I find a specific player?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="gs-1" role="region"><p class="faq-content">The Players tab has a search bar at the top — type any part of a player's name to filter the list instantly.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="gs-2">How do I start a game?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(2)}" id="gs-2" role="region"><p class="faq-content">Tap <strong>Start New Game</strong> from the Home screen (or the <strong>+</strong> in the Games tab). Select 2–6 players, arrange the dealer order by dragging players into position, then tap <strong>Start Game</strong>.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(3)" :aria-expanded="isOpen(3)" aria-controls="gs-3">Can two players have the same name?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(3)}" id="gs-3" role="region"><p class="faq-content">No — Score Buddy blocks duplicate names to avoid confusion in game history and stats. If you try to add a player whose name matches an existing or archived player, you'll see an inline error with guidance.</p></div></div>
+      </div>
+
+      <!-- Scoring & Gameplay -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Scoring &amp; Gameplay</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="sg-0">How do I record a round?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="sg-0" role="region"><p class="faq-content">In an active game, tap the orange <strong>Record Round</strong> button. Enter each player's score and toggle the phase switch if they completed their phase this round.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="sg-1">How do I record a Skip card?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="sg-1" role="region"><p class="faq-content">Swipe right on the player who was skipped. The Skip Entry sheet opens with them pre-selected as the target. Tap who played the Skip card, and it saves automatically. Alternatively, tap <strong>⋯ → Quick Actions → Record Skip</strong> to open the skip sheet manually.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="sg-2">Can I undo a Skip card?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(2)}" id="sg-2" role="region"><p class="faq-content">Yes — for 30 seconds after recording a Skip, an Undo banner appears at the top of the active game screen. Tap <strong>Undo</strong> to remove it. After 30 seconds, you can delete it from the <strong>Skip History</strong> sheet.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(3)" :aria-expanded="isOpen(3)" aria-controls="sg-3">I made a mistake in the last round. Can I fix it?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(3)}" id="sg-3" role="region"><p class="faq-content">Yes. In an active game, tap <strong>⋯ → Edit Last Round</strong>. This opens the round editor pre-populated with the saved values. Correct the scores or phases and tap <strong>Save</strong>. Only the most recently recorded round can be edited this way.</p></div></div>
+      </div>
+
+      <!-- Statistics & Insights -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Statistics &amp; Insights</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="si-0">Why are my stats showing "Last 3 games"?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="si-0" role="region"><p class="faq-content">Free users see statistics computed over their last 3 games. Upgrade to Pro to see stats across your full history with no cap.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="si-1">What are Player Titles?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="si-1" role="region"><p class="faq-content">Player Titles are dynamic labels computed from your stats — they're never stored and update as you play more games. Examples: <strong>The Aggressor</strong> (plays lots of Skip cards), <strong>Comeback Kid</strong> (often wins after trailing), <strong>Home Court Hero</strong> (wins much more at a specific location). Pro feature.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="si-2">How is "Most Stuck Phase" calculated?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(2)}" id="si-2" role="region"><p class="faq-content">It's based on average consecutive rounds spent on a phase without completing it — not just how many times you failed it. This makes it a better measure of which phase actually blocks progress.</p></div></div>
+      </div>
+
+      <!-- Location Features -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Location Features</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="lf-0">Do I have to share my location?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="lf-0" role="region"><p class="faq-content">No. Location is completely optional and requires you to explicitly grant permission. If you don't grant permission, the app works fully without it.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="lf-1">What does Score Buddy do with my location?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="lf-1" role="region"><p class="faq-content">If you tag a game with a location, Score Buddy uses your approximate location (reduced accuracy for privacy) to generate a human-readable name (e.g. "Melbourne, Australia"). This is stored locally on your device only and is never sent to any server other than Apple's reverse geocoding service.</p></div></div>
+      </div>
+
+      <!-- Privacy & Data -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Privacy &amp; Data</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="pd-0">Where is my data stored?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="pd-0" role="region"><p class="faq-content">All your game data (players, scores, round history) is stored locally on your device using Apple's SwiftData framework. It is included in your iCloud Backup if you have that enabled in iOS Settings.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="pd-1">How do I delete all my data?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="pd-1" role="region"><p class="faq-content">Go to <strong>Settings → Data &amp; Storage → Delete All Data</strong>. This permanently removes all players, games, and stats from your device. Alternatively, deleting the app removes all local data.</p></div></div>
+      </div>
+
+      <!-- Purchases & Billing -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Purchases &amp; Billing</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="pb-0">Is Score Buddy Pro a subscription?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="pb-0" role="region"><p class="faq-content">No. Score Buddy Pro is a <strong>one-time purchase</strong> — pay once, use forever. There are no recurring charges.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="pb-1">Can I use Pro on multiple devices?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="pb-1" role="region"><p class="faq-content">Yes. Score Buddy Pro is tied to your Apple ID. Sign in with the same Apple ID on another device and restore purchases to unlock Pro.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="pb-2">Do you offer refunds?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(2)}" id="pb-2" role="region"><p class="faq-content">All purchases are processed by Apple. For refunds, visit <a href="https://reportaproblem.apple.com" class="text-brand underline underline-offset-2" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.</p></div></div>
+      </div>
+
+      <!-- Accessibility -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Accessibility</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="ac-0">Does Score Buddy support VoiceOver?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="ac-0" role="region"><p class="faq-content">Yes. Every player row in an active game announces the player's rank, name, current phase, and score together. Score entry fields and phase toggles in round entry are individually labelled per player. Swipe actions (skip, remove) have dedicated VoiceOver alternatives so nothing requires a swipe gesture.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="ac-1">Does the text scale with iOS accessibility settings?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="ac-1" role="region"><p class="faq-content">Yes. All text, badges, and icons respond to your iOS text size setting (Settings → Accessibility → Display &amp; Text Size → Larger Text).</p></div></div>
+      </div>
+
+      <!-- Technical -->
+      <div class="mb-10" x-data="faqSection()">
+        <h3 class="text-lg font-bold mb-4 pb-2" style="color:var(--color-text-primary);border-bottom:2px solid var(--color-border);">Technical</h3>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="tc-0">What iOS version does Score Buddy require?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(0)}" id="tc-0" role="region"><p class="faq-content">Score Buddy requires iOS 26.2 or later.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="tc-1">Live Activities aren't showing up on my iPhone.<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(1)}" id="tc-1" role="region"><p class="faq-content">Check that Live Activities are enabled for Score Buddy: <strong>iOS Settings → Score Buddy → Live Activities → Allow</strong>. Also verify you have a Pro subscription, as Live Activities are a Pro feature. Live Activities are not available on iPad — this is an Apple platform limitation.</p></div></div>
+        <div class="faq-item"><button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="tc-2">The app crashed. How do I report it?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body" :class="{'open':isOpen(2)}" id="tc-2" role="region"><p class="faq-content">Please <a href="mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Crash%20Report" class="text-brand underline underline-offset-2">email support</a> with: what you were doing when it crashed, your iPhone/iPad model, your iOS version, and the approximate time of the crash. Score Buddy uses Firebase Crashlytics to automatically capture crash reports (anonymously), which helps us fix issues quickly.</p></div></div>
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <div class="surface p-6 rounded-2xl text-sm mt-4" style="color:var(--color-text-muted);">
+      Score Buddy is developed and maintained by an independent developer. It is an unofficial companion app for Phase&nbsp;10 and is not affiliated with or endorsed by Mattel, Inc. <strong style="color:var(--color-text-secondary);">Phase 10</strong> is a trademark of Mattel, Inc.
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="site-footer" aria-label="Site footer">
+  <div class="section-container py-10">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <a href="index.html" class="flex items-center gap-3 no-underline">
+        <img src="images/icon.svg" alt="Score Buddy icon" width="36" height="36" class="rounded-xl" />
+        <div>
+          <div class="font-bold text-sm" style="color:var(--color-text-primary);">Score Buddy</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Game Night HQ</div>
+        </div>
+      </a>
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-wrap gap-x-5 gap-y-2">
+          <li><a href="index.html" class="footer-link text-sm">Home</a></li>
+          <li><a href="index.html#features" class="footer-link text-sm">Features</a></li>
+          <li><a href="index.html#pro" class="footer-link text-sm">Pro</a></li>
+          <li><a href="privacy-policy.html" class="footer-link text-sm">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="divider mt-6 mb-5"></div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs max-w-lg" style="color:var(--color-text-muted);">Score Buddy is an unofficial companion app and is not affiliated with or endorsed by Mattel, Inc. Phase&nbsp;10 is a trademark of Mattel, Inc.</p>
+      <p class="text-xs flex-shrink-0" style="color:var(--color-text-muted);">© 2026 Scott Breen</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

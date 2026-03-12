@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Score Buddy for Phase 10 — Game Night HQ</title>
+  <meta name="description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, skip card analytics, and deep stats for serious players. Free download on the App Store." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://scottbreendev.github.io/scorebuddyforphase10/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://scottbreendev.github.io/scorebuddyforphase10/" />
+  <meta property="og:title"       content="Score Buddy for Phase 10 — Game Night HQ" />
+  <meta property="og:description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, and proof that you're the best player at the table." />
+  <meta property="og:image"       content="images/og-image.png" />
+  <!-- TODO: Add images/og-image.png (1200×630px) for social preview -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Score Buddy for Phase 10" />
+  <meta name="twitter:description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, skip card analytics." />
+  <meta name="twitter:image"       content="images/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand:   'var(--color-brand)',
+            accent:  'var(--color-accent)',
+            gold:    'var(--color-gold)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Alpine.js (deferred) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- App JS -->
+  <script src="js/app.js"></script>
+
+  <!-- TODO: Uncomment Google Analytics script when ready -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="site-nav" class="nav-transparent" x-data="stickyNav()" aria-label="Main navigation">
+  <div class="section-container">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 no-underline" aria-label="Score Buddy — home">
+        <img src="images/icon.svg" alt="" width="32" height="32" class="rounded-lg flex-shrink-0" />
+        <span class="nav-wordmark font-bold text-base">Score Buddy</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#pro" class="nav-link">Pro</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="support.html" class="nav-link">Support</a>
+      </div>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-3">
+        <!-- Theme toggle -->
+        <button
+          class="theme-toggle"
+          @click="$store.theme.toggle()"
+          :aria-label="$store.theme.dark ? 'Switch to light mode' : 'Switch to dark mode'"
+          :title="$store.theme.dark ? 'Light mode' : 'Dark mode'"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg x-show="$store.theme.dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg x-show="!$store.theme.dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- CTA (desktop) -->
+        <!-- TODO: Replace # with actual App Store URL when app is live -->
+        <a href="#" class="hidden md:inline-flex btn-hero-primary text-sm py-2 px-4">
+          Download Free
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="md:hidden flex flex-col gap-1.5 p-2 theme-toggle"
+          @click="toggleMobile()"
+          :aria-expanded="mobileOpen"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      x-show="mobileOpen"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden border-t border-white/10 py-4 flex flex-col gap-1"
+      @click.outside="closeMobile()"
+    >
+      <a href="#features" class="nav-link block" @click="closeMobile()">Features</a>
+      <a href="#pro"      class="nav-link block" @click="closeMobile()">Pro</a>
+      <a href="#faq"      class="nav-link block" @click="closeMobile()">FAQ</a>
+      <a href="support.html" class="nav-link block" @click="closeMobile()">Support</a>
+      <div class="pt-3 border-t border-white/10">
+        <!-- TODO: Replace # with actual App Store URL when app is live -->
+        <a href="#" class="btn-hero-primary w-full justify-center text-sm">Download Free on the App Store</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main-content">
+
+  <!-- ==========================================================
+       HERO
+       ========================================================== -->
+  <section id="hero" aria-label="Score Buddy — hero">
+
+    <!-- Decorative floating cards -->
+    <div class="hero-card-decoration" style="width:180px;height:120px;top:18%;left:4%;transform:rotate(-8deg);"></div>
+    <div class="hero-card-decoration" style="width:120px;height:80px;top:55%;left:6%;transform:rotate(4deg);"></div>
+    <div class="hero-card-decoration" style="width:150px;height:100px;top:25%;right:3%;transform:rotate(6deg);"></div>
+
+    <div class="section-container w-full">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-28 lg:py-36">
+
+        <!-- Left: copy -->
+        <div class="flex-1 text-center lg:text-left max-w-xl lg:max-w-none">
+
+          <div class="hero-eyebrow gsap-fade-up mb-5">
+            <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/85 text-xs font-semibold px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+              Free on the App Store
+            </span>
+          </div>
+
+          <h1 class="hero-headline gsap-fade-up text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
+            <span class="gradient-text">Game Night HQ.</span><br />
+            <span class="text-white/90 text-4xl md:text-5xl lg:text-6xl font-bold">The rivalry is real.</span>
+          </h1>
+
+          <p class="hero-subhead gsap-fade-up text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
+            Score tracking built for Phase&nbsp;10 — rounds in seconds, live rankings, and proof that you're the best player at the table.
+          </p>
+
+          <div class="hero-ctas gsap-fade-up flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <!-- TODO: Replace # with actual App Store URL when app is live -->
+            <a href="#" aria-label="Download Score Buddy free on the App Store">
+              <img src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-[54px]" />
+            </a>
+            <a href="#features" class="btn-hero-secondary text-base">
+              See the features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: device frame -->
+        <div class="hero-device gsap-scale-in flex-shrink-0 flex justify-center">
+          <div class="device-frame">
+            <div class="device-screen-clip">
+              <img class="device-screenshot" src="images/ss-01.png" alt="Score Buddy active game screen" />
+            </div>
+            <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       STATS STRIP
+       ========================================================== -->
+  <div class="stats-strip" aria-label="App stats">
+    <div class="section-container py-4">
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div class="stats-chip">
+          <span class="stats-chip-dot" aria-hidden="true"></span>
+          <span><strong>2–6 Players</strong> per game</span>
+        </div>
+        <div class="hidden sm:block w-px h-4 bg-[var(--color-border)]" aria-hidden="true"></div>
+        <div class="stats-chip">
+          <span class="stats-chip-dot" aria-hidden="true"></span>
+          <span><strong>Phases 1–10</strong> tracked</span>
+        </div>
+        <div class="hidden sm:block w-px h-4 bg-[var(--color-border)]" aria-hidden="true"></div>
+        <div class="stats-chip">
+          <span class="stats-chip-dot" aria-hidden="true"></span>
+          <span><strong>One-time Pro</strong> · No subscription</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       FEATURE HIGHLIGHTS
+       ========================================================== -->
+  <section id="features" class="section-pad" aria-labelledby="features-heading">
+    <div class="section-container">
+
+      <div class="text-center mb-16 gsap-fade-up">
+        <span class="section-label">Features</span>
+        <h2 id="features-heading" class="text-3xl md:text-4xl font-bold" style="color:var(--color-text-primary)">
+          Everything your game night needs.
+        </h2>
+        <p class="mt-4 text-lg max-w-xl mx-auto" style="color:var(--color-text-secondary)">
+          Built for exactly one game. Every feature designed around how Phase&nbsp;10 actually gets played.
+        </p>
+      </div>
+
+      <!-- Feature 1: Active Game -->
+      <div class="feature-panel">
+        <div class="feature-text-col">
+          <div class="feature-tag">Keep score</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary)">Rounds in seconds.</h3>
+          <p class="text-lg leading-relaxed mb-6" style="color:var(--color-text-secondary)">
+            Tap in scores and mark phase completions — done before the next deal. Live rankings re-sort the moment a round is saved, so everyone knows exactly where they stand.
+          </p>
+          <ul class="space-y-3" style="color:var(--color-text-secondary)">
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Phase progress chips for every player at a glance</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Dealer tracking with automatic rotation each round</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Edit the last round if someone made a mistake</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Export a full scoresheet as CSV after every game</span>
+            </li>
+          </ul>
+        </div>
+        <div class="device-col flex justify-center lg:justify-end">
+          <div class="device-frame device-frame-sm">
+            <div class="device-screen-clip">
+              <img class="device-screenshot" src="images/ss-02.png" alt="Active game screen with live player rankings" />
+            </div>
+            <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Skip cards (reversed) -->
+      <div class="feature-panel reverse">
+        <div class="feature-text-col">
+          <div class="feature-tag">Skip tracking</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary)">Swipe. Tap. Done.</h3>
+          <p class="text-lg leading-relaxed mb-6" style="color:var(--color-text-secondary)">
+            Swipe right on any player to record a Skip card. They're pre-selected as the target — tap who played the card and it saves instantly. The fastest skip tracking you've ever used.
+          </p>
+          <ul class="space-y-3" style="color:var(--color-text-secondary)">
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Swipe-to-skip: two taps to record a Skip card</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Undo banner for 30 seconds after every skip</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Per-game skip summary — who gave, who got</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Skip personalities &amp; rivalry stats across your history (Pro)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="device-col flex justify-center lg:justify-start">
+          <div class="device-frame device-frame-sm">
+            <div class="device-screen-clip">
+              <img class="device-screenshot" src="images/ss-03.png" alt="Swipe to skip interaction" />
+            </div>
+            <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Rematch -->
+      <div class="feature-panel">
+        <div class="feature-text-col">
+          <div class="feature-tag">Smart setup</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary)">Same crew, one tap.</h3>
+          <p class="text-lg leading-relaxed mb-6" style="color:var(--color-text-secondary)">
+            When a game ends, Score Buddy remembers everything. The rematch banner copies your players, seating order, and location — your next game is set up before you've even shuffled the deck.
+          </p>
+          <ul class="space-y-3" style="color:var(--color-text-secondary)">
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>One-tap rematch pre-fills players, seating &amp; location</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Full round history with pass/fail per player</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Recent games on your home screen — tap to jump back in</span>
+            </li>
+          </ul>
+        </div>
+        <div class="device-col flex justify-center lg:justify-end">
+          <div class="device-frame device-frame-sm">
+            <div class="device-screen-clip">
+              <img class="device-screenshot" src="images/ss-04.png" alt="Start game screen with rematch banner" />
+            </div>
+            <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Insights (reversed) -->
+      <div class="feature-panel reverse">
+        <div class="feature-text-col">
+          <div class="feature-tag">Pro · Advanced stats</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary)">Data, not hearsay.</h3>
+          <p class="text-lg leading-relaxed mb-6" style="color:var(--color-text-secondary)">
+            Win rates, hot and cold streaks, monthly performance, and a computed title for every player — The Aggressor, Comeback Kid, Home Court Hero, The Wall. Proven by the numbers.
+          </p>
+          <ul class="space-y-3" style="color:var(--color-text-secondary)">
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Win trends &amp; streak analysis across your whole history</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Location Insights — win rates and skip patterns per venue</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Skip Analytics — personalities, rivalries &amp; hostility scores</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="icon-check mt-0.5 text-green-500">✓</span>
+              <span>Most Stuck Phase — find out which phase wrecks your group</span>
+            </li>
+          </ul>
+        </div>
+        <div class="device-col flex justify-center lg:justify-start">
+          <div class="device-frame device-frame-sm">
+            <div class="device-screen-clip">
+              <img class="device-screenshot" src="images/ss-07.png" alt="Insights screen showing player stats and win trends" />
+            </div>
+            <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       SCREENSHOT GALLERY CAROUSEL
+       ========================================================== -->
+  <section class="section-pad-sm overflow-hidden" style="background-color:var(--color-surface-raised);" aria-labelledby="gallery-heading">
+    <div class="section-container mb-10 text-center gsap-fade-up">
+      <span class="section-label">Gallery</span>
+      <h2 id="gallery-heading" class="text-3xl font-bold" style="color:var(--color-text-primary)">See it in action.</h2>
+      <p class="mt-3 text-base" style="color:var(--color-text-secondary)">All screens from the app.</p>
+    </div>
+
+    <div
+      x-data="carousel()"
+      @keydown.window="onKeyDown($event)"
+      class="relative"
+      role="region"
+      aria-label="App screenshot gallery"
+      aria-roledescription="carousel"
+    >
+      <!-- Arrows -->
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <button class="carousel-btn" @click="prev()" aria-label="Previous screenshot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="flex gap-2" role="tablist" aria-label="Gallery slides">
+          <template x-for="i in total" :key="i">
+            <button
+              class="carousel-dot"
+              :class="{ 'active': active === i - 1 }"
+              @click="goTo(i - 1)"
+              :aria-label="`Screenshot ${i}`"
+              :aria-selected="active === i - 1"
+              role="tab"
+            ></button>
+          </template>
+        </div>
+        <button class="carousel-btn" @click="next()" aria-label="Next screenshot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Stack (crossfade) -->
+      <div
+        class="carousel-wrapper"
+        @touchstart.passive="onTouchStart($event)"
+        @touchend.passive="onTouchEnd($event)"
+      >
+        <div class="carousel-stack">
+          <template x-for="(slide, i) in [
+            { label: 'Home Screen',       src: 'images/ss-01.png' },
+            { label: 'Active Game',       src: 'images/ss-02.png' },
+            { label: 'Round Entry',       src: 'images/ss-03.png' },
+            { label: 'Swipe to Skip',     src: 'images/ss-04.png' },
+            { label: 'Player History',    src: 'images/ss-06.png' },
+            { label: 'Insights Overview', src: 'images/ss-07.png' },
+            { label: 'Skip Insights',     src: 'images/ss-08.png' },
+            { label: 'Pro Stats',         src: 'images/ss-09.png' }
+          ]" :key="i">
+            <div
+              class="carousel-slide"
+              :class="{ 'active': active === i }"
+              :aria-label="slide.label"
+              role="tabpanel"
+              :aria-hidden="active !== i"
+            >
+              <div class="device-frame device-frame-sm">
+                <div class="device-screen-clip">
+                  <img class="device-screenshot" :src="slide.src" :alt="slide.label" />
+                </div>
+                <img class="device-overlay" src="images/device-frame.png" alt="" aria-hidden="true" />
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       PRO vs FREE COMPARISON
+       ========================================================== -->
+  <section id="pro" class="section-pad" aria-labelledby="pro-heading">
+    <div class="section-container">
+
+      <div class="text-center mb-12 gsap-fade-up">
+        <span class="section-label">Pricing</span>
+        <h2 id="pro-heading" class="text-3xl md:text-4xl font-bold" style="color:var(--color-text-primary)">
+          Free to play. <span class="gradient-text-pro">Pro to dominate.</span>
+        </h2>
+        <p class="mt-4 text-lg max-w-lg mx-auto" style="color:var(--color-text-secondary)">
+          Score Buddy is free with the core features you need. Upgrade once to unlock everything — forever.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+
+        <!-- Free card -->
+        <div class="comparison-card comparison-card-free">
+          <div class="comparison-header">
+            <div class="text-2xl mb-1">🆓</div>
+            <h3 class="text-xl font-bold" style="color:var(--color-text-primary)">Free</h3>
+            <p class="text-sm mt-1" style="color:var(--color-text-secondary)">Everything you need to play</p>
+          </div>
+          <div class="comparison-rows">
+            <div class="comparison-row"><span>Record rounds, phases &amp; scores</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Skip card tracking</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Full scoresheet + CSV export</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Rematch banner</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Edit last round</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Player search</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Basic stats (win rate, streak, avg)</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-secondary)">Saved games</span> <span class="icon-value">Up to 3</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Advanced Statistics</span> <span class="icon-cross">✕</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Player Titles</span> <span class="icon-cross">✕</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Location Insights</span> <span class="icon-cross">✕</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Skip Analytics</span> <span class="icon-cross">✕</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Player Customisation</span> <span class="icon-cross">✕</span></div>
+            <div class="comparison-row"><span style="color:var(--color-text-muted)">Live Activities</span> <span class="icon-cross">✕</span></div>
+          </div>
+          <div class="px-6 pb-6 pt-4">
+            <a href="#" class="btn-secondary w-full justify-center">
+              <!-- TODO: Replace # with actual App Store URL -->
+              Download Free →
+            </a>
+          </div>
+        </div>
+
+        <!-- Pro card -->
+        <div class="comparison-card comparison-card-pro">
+          <div class="comparison-header">
+            <div class="flex items-center justify-between mb-1">
+              <div class="text-2xl">💎</div>
+              <span class="comparison-badge">Everything. Forever.</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Score Buddy Pro</h3>
+            <p class="text-sm mt-1 text-white/70">One-time purchase · Unlock everything</p>
+          </div>
+          <div class="comparison-rows">
+            <div class="comparison-row"><span>Record rounds, phases &amp; scores</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Skip card tracking</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Full scoresheet + CSV export</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Rematch banner</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Edit last round</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Player search</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Basic stats (win rate, streak, avg)</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Saved games</span> <span class="icon-value text-white/90 font-semibold">Unlimited</span></div>
+            <div class="comparison-row"><span>Advanced Statistics</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Player Titles</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Location Insights</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Skip Analytics</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Player Customisation</span> <span class="icon-check">✓</span></div>
+            <div class="comparison-row"><span>Live Activities <span class="text-white/60 text-xs">(iPhone)</span></span> <span class="icon-check">✓</span></div>
+          </div>
+          <div class="px-6 pb-6 pt-4">
+            <!-- TODO: Replace # with actual App Store URL -->
+            <a href="#" class="btn-pro w-full justify-center">
+              Upgrade to Pro →
+            </a>
+            <p class="text-white/60 text-xs text-center mt-3">One-time purchase · Available in-app</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       WHY SCORE BUDDY — DIFFERENTIATORS
+       ========================================================== -->
+  <section class="section-pad" style="background-color:var(--color-surface-raised);" aria-labelledby="why-heading">
+    <div class="section-container">
+
+      <div class="text-center mb-12 gsap-fade-up">
+        <span class="section-label">Why Score Buddy?</span>
+        <h2 id="why-heading" class="text-3xl md:text-4xl font-bold" style="color:var(--color-text-primary)">
+          Built differently.
+        </h2>
+      </div>
+
+      <div class="differentiator-grid">
+
+        <div class="differentiator-card">
+          <span class="differentiator-icon" aria-hidden="true">🃏</span>
+          <h3 class="text-lg font-bold mb-2" style="color:var(--color-text-primary)">Built for Phase 10 only</h3>
+          <p style="color:var(--color-text-secondary);line-height:1.7;">
+            Not a generic score tracker that half-works for Phase&nbsp;10. Every feature — phases, skip cards, dealer rotation, rematch — designed for this exact game.
+          </p>
+        </div>
+
+        <div class="differentiator-card">
+          <span class="differentiator-icon" aria-hidden="true">📴</span>
+          <h3 class="text-lg font-bold mb-2" style="color:var(--color-text-primary)">Your data, your device</h3>
+          <p style="color:var(--color-text-secondary);line-height:1.7;">
+            No account. No cloud sign-in. No subscription. Your players and scores live on your device, backed up by iCloud just like your photos.
+          </p>
+        </div>
+
+        <div class="differentiator-card">
+          <span class="differentiator-icon" aria-hidden="true">♿</span>
+          <h3 class="text-lg font-bold mb-2" style="color:var(--color-text-primary)">Built for everyone</h3>
+          <p style="color:var(--color-text-secondary);line-height:1.7;">
+            Full VoiceOver support. Dynamic Type scaling. Nothing requires a swipe gesture. Score Buddy works for every player at the table.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       FAQ ACCORDION
+       ========================================================== -->
+  <section id="faq" class="section-pad" aria-labelledby="faq-heading">
+    <div class="section-container max-w-3xl">
+
+      <div class="text-center mb-12 gsap-fade-up">
+        <span class="section-label">FAQ</span>
+        <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold" style="color:var(--color-text-primary)">
+          Common questions.
+        </h2>
+      </div>
+
+      <div x-data="faqAccordion()">
+
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(0)" :aria-expanded="isOpen(0)" aria-controls="faq-0">
+            Is Score Buddy really free to download?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(0) }" id="faq-0" role="region">
+            <p class="faq-content">Yes — Score Buddy is free to download and fully usable with no time limits. The free version lets you track games for up to 6 players, save up to 3 games, and see basic stats. No credit card, no trial period.</p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(1)" :aria-expanded="isOpen(1)" aria-controls="faq-1">
+            What does Score Buddy Pro include?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(1) }" id="faq-1" role="region">
+            <p class="faq-content">Pro unlocks: unlimited saved games &amp; full history; Advanced Statistics with win trends, streaks, and player titles; Location Insights (win rates by venue); Skip Analytics (personalities, rivalries, hostility scores); Player Customisation (emoji, photo, accent colour); and Live Activities on iPhone (Dynamic Island &amp; Lock Screen).</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(2)" :aria-expanded="isOpen(2)" aria-controls="faq-2">
+            Is it a one-time purchase or a subscription?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(2) }" id="faq-2" role="region">
+            <p class="faq-content">One-time purchase. Pay once and keep it forever — no renewals, no recurring charges, no hidden fees. Pro is tied to your Apple ID and can be restored on any device for free.</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(3)" :aria-expanded="isOpen(3)" aria-controls="faq-3">
+            How do I record a Skip card?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(3) }" id="faq-3" role="region">
+            <p class="faq-content">Swipe right on the player who was skipped. The Skip Entry sheet opens with them pre-selected as the target. Tap who played the Skip card and it saves automatically — no Save button needed. You can also tap ⋯ → Quick Actions → Record Skip to open the skip sheet manually.</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(4)" :aria-expanded="isOpen(4)" aria-controls="faq-4">
+            Can I fix a mistake in the last round?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(4) }" id="faq-4" role="region">
+            <p class="faq-content">Yes. In an active game, tap ⋯ → Edit Last Round. The round editor opens pre-populated with the saved values — correct the scores or phases and tap Save. Only the most recently recorded round can be edited this way.</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(5)" :aria-expanded="isOpen(5)" aria-controls="faq-5">
+            Does it work on iPad?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(5) }" id="faq-5" role="region">
+            <p class="faq-content">Yes — Score Buddy is optimised for both iPhone and iPad. Note: Live Activities (Dynamic Island &amp; Lock Screen updates) are an Apple platform limitation and are iPhone-only across all apps.</p>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(6)" :aria-expanded="isOpen(6)" aria-controls="faq-6">
+            I bought Pro but it's not showing — what do I do?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(6) }" id="faq-6" role="region">
+            <p class="faq-content">Go to Settings in the app, tap Score Buddy Pro, then tap Restore Purchases. Your purchase is tied to your Apple ID and can be restored on any device you're signed into. If the problem persists, <a href="mailto:scott.breen.dev@outlook.com?subject=Score%20Buddy%20Pro%20Purchase%20Issue">contact support</a>.</p>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-trigger" @click="toggle(7)" :aria-expanded="isOpen(7)" aria-controls="faq-7">
+            Does Score Buddy have VoiceOver support?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body" :class="{ 'open': isOpen(7) }" id="faq-7" role="region">
+            <p class="faq-content">Yes. Every player row in an active game announces rank, name, current phase, and score together. Score entry fields and phase toggles in round entry are individually labelled per player. All swipe actions (skip, remove) have dedicated VoiceOver alternatives — nothing requires a swipe gesture. All text and badges scale with your iOS text size settings.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="support.html" class="text-brand font-medium hover:underline underline-offset-2">
+          View all FAQs and support →
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       FINAL CTA BANNER
+       ========================================================== -->
+  <section id="cta-banner" class="section-pad text-center" aria-labelledby="cta-heading">
+    <div class="section-container relative z-10">
+      <div class="cta-content flex flex-col items-center gap-6 gsap-fade-up">
+        <img src="images/icon.svg" alt="Score Buddy icon" width="96" height="96" class="rounded-3xl shadow-xl" />
+        <h2 id="cta-heading" class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          Ready to settle the score?
+        </h2>
+        <p class="max-w-md text-white/70 text-lg">
+          Track phases, rivalries, and stats from your very first game — free, no account needed.
+        </p>
+        <!-- TODO: Replace # with actual App Store URL when app is live -->
+        <a href="#" aria-label="Download Score Buddy free on the App Store">
+          <img src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-[54px]" />
+        </a>
+        <p class="text-white/50 text-sm">No account needed. Your data stays on your device.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="site-footer" aria-label="Site footer">
+  <div class="section-container py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+
+      <!-- Logo + tagline -->
+      <div class="flex items-center gap-3">
+        <img src="images/icon.svg" alt="Score Buddy icon" width="40" height="40" class="rounded-xl" />
+        <div>
+          <div class="font-bold" style="color:var(--color-text-primary);">Score Buddy</div>
+          <div class="text-sm" style="color:var(--color-text-muted);">Game Night HQ. The rivalry is real.</div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          <li><a href="#features" class="footer-link">Features</a></li>
+          <li><a href="#pro" class="footer-link">Pro</a></li>
+          <li><a href="support.html" class="footer-link">Support</a></li>
+          <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="divider mt-8 mb-6"></div>
+
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs max-w-lg" style="color:var(--color-text-muted);">
+        Score Buddy is an unofficial companion app and is not affiliated with or endorsed by Mattel, Inc. Phase&nbsp;10 is a trademark of Mattel, Inc.
+      </p>
+      <p class="text-xs flex-shrink-0" style="color:var(--color-text-muted);">© 2026 Scott Breen</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

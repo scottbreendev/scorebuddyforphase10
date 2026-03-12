@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Score Buddy for Phase 10</title>
+  <meta name="description" content="Privacy policy for Score Buddy for Phase 10. Your game data stays on your device. We use only anonymous analytics." />
+
+  <link rel="canonical" href="https://scottbreendev.github.io/scorebuddyforphase10/privacy-policy.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://scottbreendev.github.io/scorebuddyforphase10/privacy-policy.html" />
+  <meta property="og:title"       content="Privacy Policy — Score Buddy for Phase 10" />
+  <meta property="og:description" content="Your game data stays on your device. We use only anonymous analytics." />
+  <meta property="og:image"       content="images/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { brand: 'var(--color-brand)', accent: 'var(--color-accent)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="site-nav" class="nav-transparent" x-data="stickyNav()" aria-label="Main navigation">
+  <div class="section-container">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 no-underline" aria-label="Score Buddy — home">
+        <img src="images/icon.svg" alt="" width="32" height="32" class="rounded-lg flex-shrink-0" />
+        <span class="nav-wordmark font-bold text-base">Score Buddy</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#pro" class="nav-link">Pro</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <a href="privacy-policy.html" class="nav-link" aria-current="page">Privacy</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle" @click="$store.theme.toggle()" :aria-label="$store.theme.dark ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg x-show="$store.theme.dark"  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg x-show="!$store.theme.dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="hidden md:inline-flex btn-hero-primary text-sm py-2 px-4">Download Free</a>
+        <!-- TODO: Replace # with actual App Store URL -->
+        <button class="md:hidden flex flex-col gap-1.5 p-2 theme-toggle" @click="toggleMobile()" :aria-expanded="mobileOpen" aria-controls="mobile-menu" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" x-show="mobileOpen" x-transition class="md:hidden border-t border-white/10 py-4 flex flex-col gap-1" @click.outside="closeMobile()">
+      <a href="index.html#features" class="nav-link block" @click="closeMobile()">Features</a>
+      <a href="index.html#pro" class="nav-link block" @click="closeMobile()">Pro</a>
+      <a href="support.html" class="nav-link block" @click="closeMobile()">Support</a>
+      <a href="privacy-policy.html" class="nav-link block" @click="closeMobile()">Privacy</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<div class="page-hero">
+  <div class="section-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">Privacy Policy</span>
+    </nav>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-2">Privacy Policy</h1>
+    <p class="mt-3 text-white/70 text-lg max-w-xl">Your game data stays on your device. We use only anonymous analytics.</p>
+    <p class="mt-4 text-white/50 text-sm">Effective: March&nbsp;6, 2026 · Last updated: March&nbsp;11, 2026</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main-content" class="section-pad">
+  <div class="section-container max-w-3xl">
+
+    <!-- Quick summary card -->
+    <div class="surface-raised rounded-2xl p-6 mb-10 border-l-4" style="border-left-color:var(--color-brand);">
+      <p class="font-semibold mb-1" style="color:var(--color-text-primary);">Short version</p>
+      <p class="text-sm" style="color:var(--color-text-secondary);">
+        Your game data (player names, scores, locations) never leaves your device. We collect only anonymous analytics with no advertising identifiers. We do not sell your data. We do not collect your name, email, or any personal information.
+      </p>
+    </div>
+
+    <!-- Section jump links -->
+    <nav class="surface rounded-xl p-5 mb-12" aria-label="On this page">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:var(--color-text-muted);">Jump to section</p>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-sm">
+        <li><a href="#section-1" class="text-brand hover:underline underline-offset-2">1. Overview</a></li>
+        <li><a href="#section-2" class="text-brand hover:underline underline-offset-2">2. Data We Collect</a></li>
+        <li><a href="#section-3" class="text-brand hover:underline underline-offset-2">3. Data We Do NOT Collect</a></li>
+        <li><a href="#section-4" class="text-brand hover:underline underline-offset-2">4. Third-Party Services</a></li>
+        <li><a href="#section-5" class="text-brand hover:underline underline-offset-2">5. In-App Purchases</a></li>
+        <li><a href="#section-6" class="text-brand hover:underline underline-offset-2">6. Children's Privacy</a></li>
+        <li><a href="#section-7" class="text-brand hover:underline underline-offset-2">7. Data Security</a></li>
+        <li><a href="#section-8" class="text-brand hover:underline underline-offset-2">8. Your Rights</a></li>
+        <li><a href="#section-9" class="text-brand hover:underline underline-offset-2">9. Changes to This Policy</a></li>
+        <li><a href="#section-10" class="text-brand hover:underline underline-offset-2">10. Contact</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose-custom">
+
+      <!-- 1 -->
+      <section id="section-1" aria-labelledby="h-section-1">
+        <h2 id="h-section-1">1. Overview</h2>
+        <p>Score Buddy ("the app") is a Phase 10 score tracking companion for iOS. We are committed to protecting your privacy. This policy explains what data is collected, how it is used, and your rights as a user.</p>
+      </section>
+
+      <!-- 2 -->
+      <section id="section-2" aria-labelledby="h-section-2">
+        <h2 id="h-section-2">2. Data We Collect</h2>
+
+        <h3>2.1 Data You Provide (Stored Locally Only)</h3>
+        <p>The following data is created by you and stored <strong>only on your device</strong> using SwiftData (Apple's local database framework):</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+              <th>Leaves your device?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Player names</td><td>Track scores</td><td>No — local only</td></tr>
+            <tr><td>Game scores and round history</td><td>Score tracking</td><td>No — local only</td></tr>
+            <tr><td>Phase progress per player</td><td>Game tracking</td><td>No — local only</td></tr>
+            <tr><td>Location tags on games (optional)</td><td>Location-based stats</td><td>No — local only</td></tr>
+            <tr><td>Skip card actions</td><td>Skip tracking stats</td><td>No — local only</td></tr>
+          </tbody>
+        </table>
+
+        <p>This data is included in your device's <strong>iCloud Backup</strong> if you have iCloud Backup enabled in iOS Settings. Score Buddy does not control or access your iCloud Backup — it is managed entirely by Apple.</p>
+
+        <h3>2.2 Analytics Data (Firebase Analytics)</h3>
+        <p>Score Buddy uses <strong>Firebase Analytics</strong> (provided by Google) to collect <strong>anonymous, aggregated usage data</strong>. This helps us understand how the app is used so we can improve it.</p>
+
+        <p>We use <code>FirebaseAnalyticsCore</code>, which means:</p>
+        <ul>
+          <li>No advertising identifier (IDFA) is collected</li>
+          <li>No cross-app tracking</li>
+          <li>You will <strong>not</strong> see an "App Tracking Transparency" permission prompt from this app</li>
+        </ul>
+
+        <p><strong>What Firebase Analytics collects automatically:</strong></p>
+        <ul>
+          <li>App open / session start events — also includes aggregate counts: total games played, total players, total saved locations, and subscription tier ("free" or "pro"). None of these are linked to your identity.</li>
+          <li>App version and iOS version</li>
+          <li>Device type (e.g. iPhone, iPad) — never a specific device identifier</li>
+          <li>Country / region (coarse, from IP address — IP address itself is not stored)</li>
+          <li>In-app purchase events (anonymous — product ID and price tier only, not linked to your Apple ID)</li>
+          <li>Crash-free user rate</li>
+        </ul>
+
+        <p><strong>Custom events we log:</strong></p>
+
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Events &amp; Parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Game</td><td>Game started (player count, location method, is rematch); game completed (player count, round count, skip count, whether Phase 10 was completed, location method, is rematch); skip tracked</td></tr>
+            <tr><td>Screen views</td><td>Which screen was viewed using Firebase's standard <code>screen_view</code> event</td></tr>
+            <tr><td>Monetisation</td><td>Paywall viewed (which feature triggered it); purchase completed; purchases restored</td></tr>
+            <tr><td>Features</td><td>Which Insights sub-tab was viewed and whether the user is a Pro subscriber</td></tr>
+            <tr><td>Players</td><td>Player added (manual entry or from Contacts); player customisation saved (avatar type, colour changed)</td></tr>
+            <tr><td>Feedback</td><td>Whether the user responded positively or negatively to the in-app rating prompt (no name or identity attached)</td></tr>
+          </tbody>
+        </table>
+
+        <p>None of these events include player names, scores, location names, or any content you enter into the app.</p>
+
+        <p><strong>Firebase Analytics Data Retention:</strong> Google retains event-level data for 2 months and aggregated reporting data for up to 14 months, per Google's standard policy. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details.</p>
+
+        <h3>2.3 Contacts (Optional)</h3>
+        <p>If you choose to link a player to a contact, Score Buddy requests access to your Contacts. We only read the <strong>name and profile picture</strong> of the specific contacts you explicitly select — no other contact fields (phone number, email, address, etc.) are accessed.</p>
+        <p><strong>What happens to that data:</strong></p>
+        <table>
+          <thead><tr><th></th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Uploaded to a server?</strong></td><td><strong>No.</strong> Imported contact names and photos are never sent to any server operated by Score Buddy or any third party.</td></tr>
+            <tr><td><strong>Stored where?</strong></td><td>Locally on your device, inside Score Buddy's SwiftData database.</td></tr>
+            <tr><td><strong>iCloud Backup</strong></td><td>If you have iCloud Backup enabled in iOS Settings, this data is included in your device backup alongside all other app data. That backup is managed entirely by Apple — Score Buddy has no access to it. iCloud Backup can be turned off for your entire device under <strong>iOS Settings → [Your Name] → iCloud → iCloud Backup</strong>, but iOS does not allow individual apps to be excluded from a device backup.</td></tr>
+            <tr><td><strong>Revoke access</strong></td><td>At any time via <strong>iOS Settings → Privacy &amp; Security → Contacts → Score Buddy</strong>. Revoking access does not delete data already imported.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>2.4 Location (Optional)</h3>
+        <p>If you choose to tag a game with a location, Score Buddy requests "When In Use" location access. We use <strong>reduced accuracy</strong> (approximate location only) and perform reverse geocoding to generate a human-readable location name (e.g. "Melbourne, Australia"). The approximate coordinates and generated name are stored locally on your device. Location data is never transmitted to any server other than Apple's CoreLocation reverse geocoding service.</p>
+      </section>
+
+      <!-- 3 -->
+      <section id="section-3" aria-labelledby="h-section-3">
+        <h2 id="h-section-3">3. Data We Do NOT Collect</h2>
+        <ul>
+          <li>Your name, email address, or Apple ID</li>
+          <li>Player names or any content you enter</li>
+          <li>Precise location</li>
+          <li>Advertising identifiers (IDFA / GAID)</li>
+          <li>Health or financial data</li>
+          <li>Photos or camera access</li>
+        </ul>
+      </section>
+
+      <!-- 4 -->
+      <section id="section-4" aria-labelledby="h-section-4">
+        <h2 id="h-section-4">4. Third-Party Services</h2>
+
+        <table>
+          <thead>
+            <tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Firebase Analytics</td><td>Google LLC</td><td>Anonymous usage analytics</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></td></tr>
+            <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Anonymous crash reports</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></td></tr>
+            <tr><td>App Store / StoreKit</td><td>Apple Inc.</td><td>In-app purchases</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></td></tr>
+            <tr><td>iCloud Backup</td><td>Apple Inc.</td><td>Device backup (user-controlled)</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></td></tr>
+          </tbody>
+        </table>
+
+        <p>Score Buddy does not use any advertising networks, social media SDKs, or data brokers.</p>
+      </section>
+
+      <!-- 5 -->
+      <section id="section-5" aria-labelledby="h-section-5">
+        <h2 id="h-section-5">5. In-App Purchases</h2>
+        <p>Score Buddy offers a one-time "Score Buddy Pro" in-app purchase. All purchase transactions are handled entirely by Apple via StoreKit. We receive only an anonymous transaction verification token from Apple — we never see your payment details, Apple ID, or any personal information related to the purchase.</p>
+        <p>Firebase Analytics logs the purchase event with the product ID (<code>com.pinecode.scorebuddy.pro.lifetime</code>) and price tier only, with no link to your identity.</p>
+      </section>
+
+      <!-- 6 -->
+      <section id="section-6" aria-labelledby="h-section-6">
+        <h2 id="h-section-6">6. Children's Privacy</h2>
+        <p>Score Buddy is a family-friendly card game score tracker suitable for all ages. We do not knowingly collect personal information from children under 13. The analytics we collect are anonymous and do not include any personal data.</p>
+      </section>
+
+      <!-- 7 -->
+      <section id="section-7" aria-labelledby="h-section-7">
+        <h2 id="h-section-7">7. Data Security</h2>
+        <p>All game data is stored locally on your device using Apple's SwiftData framework, protected by your device's security (Face ID / Touch ID / passcode). We do not operate any servers that store your personal data.</p>
+        <p>Firebase Analytics data is transmitted to Google over HTTPS and is subject to Google's security practices.</p>
+      </section>
+
+      <!-- 8 -->
+      <section id="section-8" aria-labelledby="h-section-8">
+        <h2 id="h-section-8">8. Your Rights</h2>
+        <p>Since Score Buddy does not collect or store personal data on our servers, there is no personal data for us to provide, correct, or delete on request. All locally stored data (your games, players, scores) can be deleted by:</p>
+        <ul>
+          <li>Deleting individual players or games from within the app</li>
+          <li>Deleting the app from your device (removes all local SwiftData)</li>
+        </ul>
+        <p>To opt out of Firebase Analytics, you can disable "Share iPhone Analytics" in <strong>iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements</strong>.</p>
+      </section>
+
+      <!-- 9 -->
+      <section id="section-9" aria-labelledby="h-section-9">
+        <h2 id="h-section-9">9. Changes to This Policy</h2>
+        <p>We may update this policy from time to time. When we do, we will update the "Last Updated" date at the top. For significant changes, we will note it in the app's release notes.</p>
+      </section>
+
+      <!-- 10 -->
+      <section id="section-10" aria-labelledby="h-section-10">
+        <h2 id="h-section-10">10. Contact</h2>
+        <p>If you have questions about this privacy policy, please contact:</p>
+        <p>
+          <strong>Score Buddy Support</strong><br />
+          Email: <a href="mailto:scott.breen.dev@outlook.com">scott.breen.dev@outlook.com</a><br />
+          Support page: <a href="support.html">scorebuddyforphase10/support</a>
+        </p>
+      </section>
+
+    </div><!-- end prose-custom -->
+
+    <!-- Mattel disclaimer -->
+    <div class="surface p-5 rounded-xl mt-12 text-sm" style="color:var(--color-text-muted);">
+      Score Buddy is an unofficial scoring companion and is not affiliated with or endorsed by Mattel, Inc. <strong style="color:var(--color-text-secondary);">Phase 10</strong> is a trademark of Mattel, Inc.
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="site-footer" aria-label="Site footer">
+  <div class="section-container py-10">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <a href="index.html" class="flex items-center gap-3 no-underline">
+        <img src="images/icon.svg" alt="Score Buddy icon" width="36" height="36" class="rounded-xl" />
+        <div>
+          <div class="font-bold text-sm" style="color:var(--color-text-primary);">Score Buddy</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Game Night HQ</div>
+        </div>
+      </a>
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-wrap gap-x-5 gap-y-2">
+          <li><a href="index.html" class="footer-link text-sm">Home</a></li>
+          <li><a href="index.html#features" class="footer-link text-sm">Features</a></li>
+          <li><a href="index.html#pro" class="footer-link text-sm">Pro</a></li>
+          <li><a href="support.html" class="footer-link text-sm">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="divider mt-6 mb-5"></div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs max-w-lg" style="color:var(--color-text-muted);">Score Buddy is an unofficial companion app and is not affiliated with or endorsed by Mattel, Inc. Phase&nbsp;10 is a trademark of Mattel, Inc.</p>
+      <p class="text-xs flex-shrink-0" style="color:var(--color-text-muted);">© 2026 Scott Breen</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
