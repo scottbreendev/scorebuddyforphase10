@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Score Buddy for Phase 10 — Game Night HQ</title>
+  <title>Score Buddy — Phase 10 Score Tracker App for iPhone</title>
   <meta name="description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, skip card analytics, and deep stats for serious players. Free download on the App Store." />
 
   <!-- Canonical -->
@@ -12,14 +12,14 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://scottbreendev.github.io/scorebuddyforphase10/" />
-  <meta property="og:title"       content="Score Buddy for Phase 10 — Game Night HQ" />
+  <meta property="og:title"       content="Score Buddy — Phase 10 Score Tracker App for iPhone" />
   <meta property="og:description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, and proof that you're the best player at the table." />
   <meta property="og:image"       content="images/og-image.png" />
   <!-- TODO: Add images/og-image.png (1200×630px) for social preview -->
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Score Buddy for Phase 10" />
+  <meta name="twitter:title"       content="Score Buddy — Phase 10 Score Tracker" />
   <meta name="twitter:description" content="Score tracking built for Phase 10. Rounds in seconds, live rankings, skip card analytics." />
   <meta name="twitter:image"       content="images/og-image.png" />
 
@@ -88,6 +88,116 @@
       });
     });
   </script>
+
+  <!-- Structured data — SoftwareApplication (rich results in Google Search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Score Buddy for Phase 10",
+    "operatingSystem": "iOS",
+    "applicationCategory": "GameApplication",
+    "applicationSubCategory": "Card Game",
+    "identifier": "com.pinecode.scorebuddy",
+    "softwareVersion": "1.0.1",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AUD"
+    },
+    "description": "Score tracking built for Phase 10. Rounds in seconds, live rankings, skip card analytics, and deep stats for serious players.",
+    "keywords": "phase 10 score tracker, phase 10 app, phase 10 scorekeeper, card game score tracker, phase 10 points tracker",
+    "url": "https://scottbreendev.github.io/scorebuddyforphase10/",
+    "author": {
+      "@type": "Person",
+      "name": "Scott Breen"
+    },
+    "screenshot": [
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-01.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-02.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-03.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-04.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-06.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-07.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-08.png",
+      "https://scottbreendev.github.io/scorebuddyforphase10/images/ss-09.png"
+    ]
+  }
+  </script>
+
+  <!-- Structured data — FAQPage (expandable Q&As in Google Search rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Score Buddy really free to download?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Score Buddy is free to download and fully usable with no time limits. The free version lets you track games for up to 6 players, save up to 3 games, and see basic stats. No credit card, no trial period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Score Buddy Pro include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pro unlocks: unlimited saved games & full history; Advanced Statistics with win trends, streaks, and player titles; Location Insights (win rates by venue); Skip Analytics (personalities, rivalries, hostility scores); Player Customisation (emoji, photo, accent colour); and Live Activities on iPhone (Dynamic Island & Lock Screen)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it a one-time purchase or a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One-time purchase. Pay once and keep it forever — no renewals, no recurring charges, no hidden fees. Pro is tied to your Apple ID and can be restored on any device for free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I record a Skip card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Swipe right on the player who was skipped. The Skip Entry sheet opens with them pre-selected as the target. Tap who played the Skip card and it saves automatically — no Save button needed. You can also use Quick Actions in the menu to open the skip sheet manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I fix a mistake in the last round?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In an active game, use Edit Last Round from the menu. The round editor opens pre-populated with the saved values — correct the scores or phases and tap Save. Only the most recently recorded round can be edited this way."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on iPad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Score Buddy is optimised for both iPhone and iPad. Note: Live Activities (Dynamic Island & Lock Screen updates) are an Apple platform limitation and are iPhone-only across all apps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I bought Pro but it's not showing — what do I do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to Settings in the app, tap Score Buddy Pro, then tap Restore Purchases. Your purchase is tied to your Apple ID and can be restored on any device you're signed into. If the problem persists, contact support at scott.breen.dev@outlook.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Score Buddy have VoiceOver support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every player row in an active game announces rank, name, current phase, and score together. Score entry fields and phase toggles are individually labelled per player. All swipe actions have dedicated VoiceOver alternatives — nothing requires a swipe gesture. All text and badges scale with your iOS text size settings."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -118,6 +228,10 @@
 
       <!-- Right actions -->
       <div class="flex items-center gap-3">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/scorebuddyforphase10" target="_blank" rel="noopener noreferrer" class="theme-toggle" aria-label="Follow Score Buddy on Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
         <!-- Theme toggle -->
         <button
           class="theme-toggle"
@@ -173,6 +287,10 @@
       <a href="#pro"      class="nav-link block" @click="closeMobile()">Pro</a>
       <a href="#faq"      class="nav-link block" @click="closeMobile()">FAQ</a>
       <a href="support.html" class="nav-link block" @click="closeMobile()">Support</a>
+      <a href="https://www.instagram.com/scorebuddyforphase10" target="_blank" rel="noopener noreferrer" class="nav-link block flex items-center gap-2" @click="closeMobile()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
       <div class="pt-3 border-t border-white/10">
         <!-- TODO: Replace # with actual App Store URL when app is live -->
         <!-- TO GO LIVE: delete the span below and uncomment this block:
@@ -214,11 +332,11 @@
 
           <h1 class="hero-headline gsap-fade-up text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
             <span class="gradient-text">Game Night HQ.</span><br />
-            <span class="text-white/90 text-4xl md:text-5xl lg:text-6xl font-bold">The rivalry is real.</span>
+            <span class="text-white/90 text-4xl md:text-5xl lg:text-6xl font-bold">The Phase&nbsp;10 score tracker.</span>
           </h1>
 
           <p class="hero-subhead gsap-fade-up text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
-            Score tracking built for Phase&nbsp;10 — rounds in seconds, live rankings, and proof that you're the best player at the table.
+            The rivalry is real — rounds in seconds, live rankings, and proof that you're the best player at the table.
           </p>
 
           <div class="hero-ctas gsap-fade-up flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start" data-section="hero">
