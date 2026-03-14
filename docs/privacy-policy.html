@@ -157,7 +157,7 @@
     </nav>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-2">Privacy Policy</h1>
     <p class="mt-3 text-white/70 text-lg max-w-xl">Your game data stays on your device. We use only anonymous analytics.</p>
-    <p class="mt-4 text-white/50 text-sm">Effective: March&nbsp;6, 2026 · Last updated: March&nbsp;11, 2026</p>
+    <p class="mt-4 text-white/50 text-sm">Effective: March&nbsp;6, 2026 · Last updated: March&nbsp;14, 2026</p>
   </div>
 </div>
 
@@ -238,13 +238,22 @@
 
         <p><strong>What Firebase Analytics collects automatically:</strong></p>
         <ul>
-          <li>App open / session start events — also includes aggregate counts: total games played, total players, total saved locations, and subscription tier ("free" or "pro"). None of these are linked to your identity.</li>
+          <li>App open / session start events</li>
           <li>App version and iOS version</li>
           <li>Device type (e.g. iPhone, iPad) — never a specific device identifier</li>
           <li>Country / region (coarse, from IP address — IP address itself is not stored)</li>
-          <li>In-app purchase events (anonymous — product ID and price tier only, not linked to your Apple ID)</li>
           <li>Crash-free user rate</li>
         </ul>
+
+        <p><strong>Device-level usage properties we record:</strong></p>
+        <p>On every app launch we record the following anonymous, bucketed counts against your device's Firebase installation ID (a random identifier — not linked to your Apple ID or any personal information). These help us understand usage patterns to improve the app's design:</p>
+        <ul>
+          <li>Total games played — stored as a range bucket (e.g. "6–20", "21–50") not a precise number</li>
+          <li>Total players created — stored as a range bucket (e.g. "4–6", "7–10")</li>
+          <li>Total saved locations — stored as a range bucket (e.g. "0", "1–5")</li>
+          <li>Subscription tier — "free" or "pro"</li>
+        </ul>
+        <p>None of these include the actual names of your players, games, or locations.</p>
 
         <p><strong>Custom events we log:</strong></p>
 
@@ -253,12 +262,13 @@
             <tr><th>Category</th><th>Events &amp; Parameters</th></tr>
           </thead>
           <tbody>
-            <tr><td>Game</td><td>Game started (player count, location method, is rematch); game completed (player count, round count, skip count, whether Phase 10 was completed, location method, is rematch); skip tracked</td></tr>
+            <tr><td>Game</td><td>Game started (player count, location method, is rematch); game completed (player count, round count, skip count, whether Phase 10 was completed, location method); skip card recorded</td></tr>
             <tr><td>Screen views</td><td>Which screen was viewed using Firebase's standard <code>screen_view</code> event</td></tr>
-            <tr><td>Monetisation</td><td>Paywall viewed (which feature triggered it); purchase completed; purchases restored</td></tr>
-            <tr><td>Features</td><td>Which Insights sub-tab was viewed and whether the user is a Pro subscriber</td></tr>
-            <tr><td>Players</td><td>Player added (manual entry or from Contacts); player customisation saved (avatar type, colour changed)</td></tr>
-            <tr><td>Feedback</td><td>Whether the user responded positively or negatively to the in-app rating prompt (no name or identity attached)</td></tr>
+            <tr><td>Monetisation</td><td>Paywall viewed (which feature triggered it, entry point in the app, product price); purchase completed (product ID, price, currency, anonymous transaction ID); purchases restored. <strong>No payment details or Apple ID are ever received by Score Buddy</strong> — see Section 5.</td></tr>
+            <tr><td>Features</td><td>Which Insights sub-tab was viewed and whether the user is a Pro subscriber; player customisation saved (avatar type, whether colour was changed)</td></tr>
+            <tr><td>Players</td><td>Player added (manual entry or imported from Contacts — no names sent)</td></tr>
+            <tr><td>Feedback</td><td>Whether the user responded positively (sent to App Store review) or negatively (opened support email) to the in-app rating prompt — no name or identity attached</td></tr>
+            <tr><td>Onboarding</td><td>Tutorial started; tutorial completed</td></tr>
           </tbody>
         </table>
 
@@ -319,7 +329,14 @@
       <section id="section-5" aria-labelledby="h-section-5">
         <h2 id="h-section-5">5. In-App Purchases</h2>
         <p>Score Buddy offers a one-time "Score Buddy Pro" in-app purchase. All purchase transactions are handled entirely by Apple via StoreKit. We receive only an anonymous transaction verification token from Apple — we never see your payment details, Apple ID, or any personal information related to the purchase.</p>
-        <p>Firebase Analytics logs the purchase event with the product ID (<code>com.pinecode.scorebuddy.pro.lifetime</code>) and price tier only, with no link to your identity.</p>
+        <p>Firebase Analytics logs the in-app purchase event with the following anonymous data only:</p>
+        <ul>
+          <li>Product ID (<code>com.pinecode.scorebuddy.pro.lifetime</code>)</li>
+          <li>Purchase price and currency (e.g. 4.99 AUD) — used for anonymous revenue reporting</li>
+          <li>An anonymous transaction ID from Apple — used to prevent the same purchase being counted twice in analytics</li>
+          <li>The entry point in the app where you opened the paywall (e.g. "settings" or "insights tab") — stored as a short code, not personal information</li>
+        </ul>
+        <p>None of this data is linked to your identity, Apple ID, or payment method.</p>
       </section>
 
       <!-- 6 -->
