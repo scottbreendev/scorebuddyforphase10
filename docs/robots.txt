@@ -1,0 +1,43 @@
+# robots.txt for Score Buddy for Phase 10
+# https://scottbreendev.github.io/scorebuddyforphase10/
+
+# Default — allow all standard crawlers
+User-agent: *
+Allow: /
+
+# AI crawlers / LLM training & retrieval — explicitly allowed.
+# These bots feed search-style answers in ChatGPT, Perplexity, Gemini, Claude, etc.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://scottbreendev.github.io/scorebuddyforphase10/sitemap.xml

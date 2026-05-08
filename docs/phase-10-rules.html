@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase 10 Rules, Phases & Scoring — Quick Reference | Score Buddy</title>
+  <meta name="description" content="Phase 10 rules made simple. The 10 phases in order, how scoring works, what Skip and Wild cards do, and a free app that tracks it all for you." />
+
+  <link rel="canonical" href="https://scottbreendev.github.io/scorebuddyforphase10/phase-10-rules.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://scottbreendev.github.io/scorebuddyforphase10/phase-10-rules.html" />
+  <meta property="og:title"       content="Phase 10 Rules, Phases & Scoring — Quick Reference" />
+  <meta property="og:description" content="The 10 phases in order, how scoring works, and what Skip and Wild cards do. Plus a free app that tracks every round for you." />
+  <meta property="og:image"       content="images/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Phase 10 Rules, Phases & Scoring — Quick Reference" />
+  <meta name="twitter:description" content="The 10 phases in order, how scoring works, and what Skip and Wild cards do." />
+  <meta name="twitter:image"       content="images/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { brand: 'var(--color-brand)', accent: 'var(--color-accent)', gold: 'var(--color-gold)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Firebase Analytics -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+    const app = initializeApp({
+      apiKey:            "AIzaSyBodMvBIy1R8q-0hN_K9YuUI45NQuCL-68",
+      authDomain:        "score-buddy-for-phase-10.firebaseapp.com",
+      projectId:         "score-buddy-for-phase-10",
+      storageBucket:     "score-buddy-for-phase-10.firebasestorage.app",
+      messagingSenderId: "259934360794",
+      appId:             "1:259934360794:web:801aee96eec11d280e41e3",
+      measurementId:     "G-1PYP9W4KTN"
+    });
+    const analytics = getAnalytics(app);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(el => {
+        el.addEventListener('click', () => {
+          logEvent(analytics, 'click_install_cta', {
+            position: el.closest('[data-section]')?.dataset.section ?? 'unknown'
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- Structured data — Article + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Phase 10 Rules, Phases & Scoring — Quick Reference",
+    "description": "The 10 phases in order, how scoring works, what Skip and Wild cards do, and a free app that tracks every round for you.",
+    "url": "https://scottbreendev.github.io/scorebuddyforphase10/phase-10-rules.html",
+    "image": "https://scottbreendev.github.io/scorebuddyforphase10/images/og-image.png",
+    "author": { "@type": "Person", "name": "Scott Breen" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Score Buddy for Phase 10",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://scottbreendev.github.io/scorebuddyforphase10/images/icon.svg"
+      }
+    },
+    "datePublished": "2026-05-08",
+    "dateModified": "2026-05-08"
+  }
+  </script>
+
+  <!-- Structured data — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scottbreendev.github.io/scorebuddyforphase10/" },
+      { "@type": "ListItem", "position": 2, "name": "Phase 10 Rules", "item": "https://scottbreendev.github.io/scorebuddyforphase10/phase-10-rules.html" }
+    ]
+  }
+  </script>
+
+  <!-- Structured data — FAQPage (answers common rule queries) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the 10 phases in Phase 10?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phase 1: 2 sets of 3. Phase 2: 1 set of 3 + 1 run of 4. Phase 3: 1 set of 4 + 1 run of 4. Phase 4: 1 run of 7. Phase 5: 1 run of 8. Phase 6: 1 run of 9. Phase 7: 2 sets of 4. Phase 8: 7 cards of one colour. Phase 9: 1 set of 5 + 1 set of 2. Phase 10: 1 set of 5 + 1 set of 3."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does scoring work in Phase 10?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At the end of each hand, players add up the cards still in their hand: number cards 1–9 are worth 5 points each, 10–12 are worth 10 points each, Skip cards are worth 15 points, and Wild cards are worth 25 points. Lowest total score after Phase 10 wins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you have to complete the phases in order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — every player works through Phase 1 first, then Phase 2, and so on. If you fail a phase you must attempt it again next hand. The first player to complete Phase 10 with the lowest score wins the game."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a Skip card do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Playing a Skip card forces the chosen player to miss their next turn. It is worth 15 penalty points if it is still in your hand at the end of a round. A player can only have one Skip played against them per turn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a Wild card do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wild cards substitute for any number or colour when completing a phase. They are worth 25 penalty points if left in your hand at the end of a round."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="site-nav" class="nav-transparent" x-data="stickyNav()" aria-label="Main navigation">
+  <div class="section-container">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 no-underline" aria-label="Score Buddy — home">
+        <img src="images/icon.svg" alt="" width="32" height="32" class="rounded-lg flex-shrink-0" />
+        <span class="nav-wordmark font-bold text-base">Score Buddy</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#pro" class="nav-link">Pro</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="support.html" class="nav-link">Support</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle" @click="$store.theme.toggle()" :aria-label="$store.theme.dark ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg x-show="$store.theme.dark"  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg x-show="!$store.theme.dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="https://apps.apple.com/us/app/score-buddy-for-phase-10/id6760017130?utm_source=website&utm_medium=cta_button&utm_campaign=rules_page" class="hidden md:inline-flex btn-hero-primary text-sm py-2 px-4">Download Free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<div class="page-hero">
+  <div class="section-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">Phase 10 Rules</span>
+    </nav>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-2 leading-tight">Phase&nbsp;10 Rules, Phases &amp; Scoring</h1>
+    <p class="mt-4 text-white/70 text-lg md:text-xl max-w-2xl">
+      A quick reference for the 10 phases, how scoring works, and what Skip and Wild cards do — plus a free iPhone &amp; iPad app that tracks every round for you.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main-content" class="section-pad">
+  <div class="section-container max-w-3xl">
+
+    <!-- Object of the game -->
+    <section class="mb-14" aria-labelledby="object-heading">
+      <h2 id="object-heading" class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary);">The object of the game</h2>
+      <p class="text-base leading-relaxed mb-3" style="color:var(--color-text-secondary);">
+        Phase&nbsp;10 is a rummy-style card game for 2–6 players. Every player works through the same list of 10 phases in order. The first player to complete Phase&nbsp;10 with the lowest total points wins.
+      </p>
+      <p class="text-base leading-relaxed" style="color:var(--color-text-secondary);">
+        At the end of every hand, the cards still in your hand count as penalty points. Complete a phase and you advance; fail and you stay on the same phase next round.
+      </p>
+    </section>
+
+    <!-- The 10 phases -->
+    <section class="mb-14" aria-labelledby="phases-heading">
+      <h2 id="phases-heading" class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary);">The 10 phases in order</h2>
+      <p class="text-base leading-relaxed mb-6" style="color:var(--color-text-secondary);">
+        Each phase is a specific combination of <strong>sets</strong> (cards of the same number) and <strong>runs</strong> (consecutive numbers in any colour). Wild cards can stand in for any number or colour.
+      </p>
+
+      <div class="surface overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th class="text-left px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);width:96px;">Phase</th>
+              <th class="text-left px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);">Requirement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 1</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">2 sets of 3</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 2</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 set of 3 + 1 run of 4</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 3</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 set of 4 + 1 run of 4</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 4</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 run of 7</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 5</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 run of 8</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 6</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 run of 9</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 7</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">2 sets of 4</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 8</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">7 cards of one colour</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-brand);">Phase 9</td><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">1 set of 5 + 1 set of 2</td></tr>
+            <tr><td class="px-5 py-3 font-semibold" style="color:var(--color-brand);">Phase 10</td><td class="px-5 py-3" style="color:var(--color-text-secondary);">1 set of 5 + 1 set of 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 text-sm" style="color:var(--color-text-muted);">
+        A <strong>set</strong> is two or more cards of the same number, any colour. A <strong>run</strong> is consecutive numbers, any colour. Sets and runs each need to be laid down in one move when you complete a phase.
+      </p>
+    </section>
+
+    <!-- Scoring -->
+    <section class="mb-14" aria-labelledby="scoring-heading">
+      <h2 id="scoring-heading" class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary);">How Phase&nbsp;10 scoring works</h2>
+      <p class="text-base leading-relaxed mb-6" style="color:var(--color-text-secondary);">
+        At the end of each hand, every player adds up the cards <em>still in their hand</em> as penalty points. Lowest total score after the player who finishes Phase&nbsp;10 first ends the game wins.
+      </p>
+
+      <div class="surface overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th class="text-left px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);">Card</th>
+              <th class="text-right px-5 py-3.5 font-semibold" style="background:var(--color-surface-raised);color:var(--color-text-primary);border-bottom:1px solid var(--color-border);">Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Numbers 1 – 9</td><td class="px-5 py-3 text-right font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-text-primary);">5 each</td></tr>
+            <tr><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Numbers 10 – 12</td><td class="px-5 py-3 text-right font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-text-primary);">10 each</td></tr>
+            <tr><td class="px-5 py-3" style="border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Skip card</td><td class="px-5 py-3 text-right font-semibold" style="border-bottom:1px solid var(--color-border);color:var(--color-accent);">15</td></tr>
+            <tr><td class="px-5 py-3" style="color:var(--color-text-secondary);">Wild card</td><td class="px-5 py-3 text-right font-semibold" style="color:var(--color-accent);">25</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Skip & Wild explainer -->
+    <section class="mb-14" aria-labelledby="special-heading">
+      <h2 id="special-heading" class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--color-text-primary);">Skip cards and Wild cards</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color:var(--color-text-primary);">Skip cards</h3>
+      <p class="text-base leading-relaxed mb-4" style="color:var(--color-text-secondary);">
+        Playing a Skip card forces the player you choose to miss their next turn. A Skip card cannot be used as part of a phase — its only purpose is to slow someone down. Each player can only be skipped once per turn.
+      </p>
+      <p class="text-base leading-relaxed mb-6" style="color:var(--color-text-secondary);">
+        Skip cards are also where rivalries are made. They're worth 15 penalty points if left in your hand at the end of a round, and they tell you everything about the social dynamic at your table.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color:var(--color-text-primary);">Wild cards</h3>
+      <p class="text-base leading-relaxed" style="color:var(--color-text-secondary);">
+        Wild cards substitute for any number or colour when completing a phase. You can use as many Wilds as you like, but a phase must contain at least one natural (non-Wild) card. Wilds are 25 penalty points if you're stuck holding one.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-8" data-section="rules_cta">
+      <div class="surface p-8 text-center" style="background:var(--gradient-hero);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Tired of paper scoresheets?</h2>
+        <p class="text-white/80 max-w-xl mx-auto mb-6">
+          Score Buddy is a free Phase&nbsp;10 score tracker for iPhone and iPad. It records phases, scores, and Skip cards in seconds — and remembers everything about your group across every game you've ever played.
+        </p>
+        <a href="https://apps.apple.com/us/app/score-buddy-for-phase-10/id6760017130?utm_source=website&utm_medium=cta_button&utm_campaign=rules_page" aria-label="Download Score Buddy free on the App Store">
+          <img src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download Score Buddy on the App Store" class="h-[54px] mx-auto" />
+        </a>
+        <p class="text-white/60 text-sm mt-4">Free · No account · No subscription</p>
+      </div>
+    </section>
+
+    <!-- Trademark disclaimer -->
+    <p class="text-xs leading-relaxed mt-12" style="color:var(--color-text-muted);">
+      Phase&nbsp;10 is a trademark of Mattel, Inc. Score Buddy and this rules summary are unofficial and not affiliated with or endorsed by Mattel. Always refer to the rules card included with your game for the authoritative ruleset — house rules vary.
+    </p>
+
+  </div>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="site-footer" aria-label="Site footer">
+  <div class="section-container py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div class="flex items-center gap-3">
+        <img src="images/icon.svg" alt="Score Buddy icon" width="40" height="40" class="rounded-xl" />
+        <div>
+          <div class="font-bold" style="color:var(--color-text-primary);">Score Buddy</div>
+          <div class="text-sm" style="color:var(--color-text-muted);">Game Night HQ. The rivalry is real.</div>
+        </div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          <li><a href="index.html#features" class="footer-link">Features</a></li>
+          <li><a href="index.html#pro" class="footer-link">Pro</a></li>
+          <li><a href="phase-10-rules.html" class="footer-link" aria-current="page">Phase 10 Rules</a></li>
+          <li><a href="support.html" class="footer-link">Support</a></li>
+          <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="divider mt-8 mb-6"></div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs max-w-lg" style="color:var(--color-text-muted);">
+        Score Buddy is an unofficial companion app and is not affiliated with or endorsed by Mattel, Inc. Phase&nbsp;10 is a trademark of Mattel, Inc.
+      </p>
+      <p class="text-xs" style="color:var(--color-text-muted);">© 2026 Scott Breen</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
